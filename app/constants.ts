@@ -1,8 +1,14 @@
-import image1 from "@/public/secondSection1.png";
-import image2 from "@/public/secondSection2.png";
-import image3 from "@/public/secondSection3.png";
-import image4 from "@/public/secondSection4.png";
-
+//PHOTOS FOR SECOND SECTION
+import image1 from "@/public/secondSectionPhotos/secondSection1.png";
+import image2 from "@/public/secondSectionPhotos/secondSection2.png";
+import image3 from "@/public/secondSectionPhotos/secondSection3.png";
+import image4 from "@/public/secondSectionPhotos/secondSection4.png";
+//PHOTOS FOR HORIZONTAL SCROLL CAROUSEL
+import HorizontalPhoto1 from "@/public/HorizontalScrollCarouselPhotos/HorizontalScrollCarousel1.jpeg";
+import HorizontalPhoto2 from "@/public/HorizontalScrollCarouselPhotos/HorizontalScrollCarousel2.jpeg";
+import HorizontalPhoto3 from "@/public/HorizontalScrollCarouselPhotos/HorizontalScrollCarousel3.jpeg";
+import HorizontalPhoto4 from "@/public/HorizontalScrollCarouselPhotos/HorizontalScrollCarousel4.jpeg";
+import HorizontalPhoto5 from "@/public/HorizontalScrollCarouselPhotos/HorizontalScrollCarousel5.jpeg";
 export const trending = [
   {
     id: 1,
@@ -27,5 +33,38 @@ export const trending = [
     artist: "Liam White",
     image: image4,
     title: "Abstract Dreams",
+  },
+];
+
+export const CARDS = [
+  {
+    url: HorizontalPhoto1,
+    title: "Whispering Peaks",
+    author: "Sophie Meadows",
+    id: 1,
+  },
+  {
+    url: HorizontalPhoto2,
+    title: "Futuristic Reverie",
+    author: "Liam Carter",
+    id: 2,
+  },
+  {
+    url: HorizontalPhoto3,
+    title: "Void on Canvas",
+    author: "Amelia Hayes",
+    id: 3,
+  },
+  {
+    url: HorizontalPhoto4,
+    title: "Tattooed Creator",
+    author: "Ethan Blackwood",
+    id: 4,
+  },
+  {
+    url: HorizontalPhoto5,
+    title: "Abstract Wall Encounter",
+    author: "Olivia Harper",
+    id: 5,
   },
 ];

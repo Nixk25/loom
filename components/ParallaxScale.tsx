@@ -2,11 +2,11 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
 import React, { useRef } from "react";
-import photo1 from "../public/ParallaxScale2.jpeg";
-import photo2 from "../public/ParallaxScale5.png";
-import photo3 from "../public/ParallaxScale3.png";
-import photo4 from "../public/ParallaxScale4.png";
-import photo5 from "../public/ParallaxScale1.png";
+import photo1 from "../public/ParallaxScalePhotos/ParallaxScale2.jpeg";
+import photo2 from "../public/ParallaxScalePhotos/ParallaxScale5.png";
+import photo3 from "../public/ParallaxScalePhotos/ParallaxScale3.png";
+import photo4 from "../public/ParallaxScalePhotos/ParallaxScale4.png";
+import photo5 from "../public/ParallaxScalePhotos/ParallaxScale1.png";
 import { useCursor } from "@/app/CursorContext";
 const ParallaxScale = () => {
   const { setCursorHidden } = useCursor();
@@ -17,6 +17,7 @@ const ParallaxScale = () => {
   });
 
   const scale2 = useTransform(scrollYProgress, [0, 1], [1, 4]);
+  const rounded = useTransform(scrollYProgress, [0, 1], ["8px", "0px"]);
   const scale5 = useTransform(scrollYProgress, [0, 1], [1, 5]);
   const scale6 = useTransform(scrollYProgress, [0, 1], [1, 6]);
   const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8]);
@@ -26,6 +27,7 @@ const ParallaxScale = () => {
     {
       src: photo1,
       scale: scale2,
+      borderRadius: rounded,
       alt: "ParallaxScale1",
       style: {
         top: "0",
@@ -37,6 +39,7 @@ const ParallaxScale = () => {
     {
       src: photo2,
       scale: scale5,
+      borderRadius: rounded,
       alt: "ParallaxScale2",
       style: {
         top: "-30vh",
@@ -48,6 +51,7 @@ const ParallaxScale = () => {
     {
       src: photo3,
       scale: scale6,
+      borderRadius: rounded,
       alt: "ParallaxScale3",
       style: {
         top: "-10vh",
@@ -59,6 +63,7 @@ const ParallaxScale = () => {
     {
       src: photo4,
       scale: scale8,
+      borderRadius: rounded,
       alt: "ParallaxScale4",
       style: {
         top: "0",
@@ -70,6 +75,7 @@ const ParallaxScale = () => {
     {
       src: photo5,
       scale: scale9,
+      borderRadius: rounded,
       alt: "ParallaxScale5",
       style: {
         top: "27.5vh",
@@ -79,6 +85,7 @@ const ParallaxScale = () => {
       },
     },
   ];
+
   return (
     <div
       onMouseEnter={() => setCursorHidden(true)}
@@ -89,22 +96,29 @@ const ParallaxScale = () => {
       <div className="sticky top-0 overflow-hidden  h-[100vh]">
         {pictures.map((picture, i) => (
           <motion.div
-            style={{ scale: picture.scale }}
+            style={{
+              scale: picture.scale,
+            }}
             key={i}
-            className="w-full h-full absolute top-0 flex justify-center items-center "
+            className="w-full h-full absolute top-0 flex justify-center items-center"
           >
-            <div
-              style={{ ...picture.style }}
-              className="w-[25vw] h-[25vh] relative "
+            <motion.div
+              style={{
+                ...picture.style,
+                borderRadius: picture.borderRadius,
+              }}
+              className="w-[25vw] h-[25vh] relative overflow-hidden"
             >
-              <Image
-                src={picture.src}
-                className="object-cover rounded-lg"
-                alt={picture.alt}
-                fill
-                placeholder="blur"
-              />
-            </div>
+              <motion.div className="w-full h-full">
+                <Image
+                  src={picture.src}
+                  className="object-cover h-full w-full"
+                  alt={picture.alt}
+                  fill
+                  placeholder="blur"
+                />
+              </motion.div>
+            </motion.div>
           </motion.div>
         ))}
       </div>

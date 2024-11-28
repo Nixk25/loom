@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import photoHero1 from "../public/photoHero1.jpeg";
-import photoHero2 from "../public/photoHero2.jpeg";
-import photoHero3 from "../public/photoHero3.jpeg";
+import photoHero1 from "../public/HeroPhotos/photoHero1.jpeg";
+import photoHero2 from "../public/HeroPhotos/photoHero2.jpeg";
+import photoHero3 from "../public/HeroPhotos/photoHero3.jpeg";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useCursor } from "@/app/CursorContext";
