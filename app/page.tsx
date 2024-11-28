@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import Interest from "@/components/Interest";
 import Lenis from "lenis";
+import ParralaxScale from "@/components/ParallaxScale";
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis();
@@ -18,6 +19,7 @@ export default function Home() {
     <>
       <Hero />
       <Interest />
+      <ParralaxScale />
     </>
   );
 }

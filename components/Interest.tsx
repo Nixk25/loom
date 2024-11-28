@@ -3,8 +3,10 @@ import React, { useRef } from "react";
 import { trending } from "@/app/constants";
 import Card from "./Card";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useCursor } from "@/app/CursorContext";
 
 const Interest = () => {
+  const { setCursorHidden } = useCursor();
   const target1 = useRef<HTMLDivElement>(null);
   const target2 = useRef<HTMLDivElement>(null);
   const target3 = useRef<HTMLDivElement>(null);
@@ -30,7 +32,10 @@ const Interest = () => {
   const scale3 = useTransform(scrollYProgress3, [0, 0.5, 1], [0.5, 1.5, 1]);
 
   return (
-    <section>
+    <section
+      onMouseEnter={() => setCursorHidden(true)}
+      onMouseLeave={() => setCursorHidden(false)}
+    >
       <div className="mt-[10vh]  sm:mt-[50vh] flex relative flex-col gap-10 items-center last:h-[20vh]">
         {trending.map((trendingArtwork) => (
           <Card key={trendingArtwork.id} data={trendingArtwork} />

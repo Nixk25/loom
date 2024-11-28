@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  cursor: none;
+}
 @font-face {
   font-family: "DirtyLine";
   src: url("/fonts/DirtyLine.woff2") format("woff2"),
@@ -14,6 +17,7 @@ body {
   font-family: "Helvetica", sans-serif;
   font-weight: bold;
   overflow-x: hidden;
+  cursor: none;
 }
 
 .font {

@@ -1,6 +1,5 @@
 import React from "react";
-import { Button } from "./ui/button";
-
+import ButtonEnhanced from "./ui/ButtonEnchanced";
 const Navbar = () => {
   return (
     <nav className="flex items-center justify-between p-4 ">
@@ -12,8 +11,8 @@ const Navbar = () => {
         </div>
       </div>
       <div className=" items-center gap-5 hidden sm:flex">
-        <Button variant="outline">Join us</Button>
-        <Button>Start your journey</Button>
+        <ButtonEnhanced size="small" prevTitle="Join us" />
+        <ButtonEnhanced size="small" prevTitle="Start your journey" />
       </div>
     </nav>
   );

@@ -5,9 +5,15 @@ import photoHero2 from "../public/photoHero2.jpeg";
 import photoHero3 from "../public/photoHero3.jpeg";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useCursor } from "@/app/CursorContext";
 const Hero = () => {
+  const { setCursorHidden } = useCursor();
   return (
-    <section className="flex justify-center items-center">
+    <section
+      onMouseEnter={() => setCursorHidden(false)}
+      onMouseLeave={() => setCursorHidden(false)}
+      className="flex justify-center items-center"
+    >
       <div className="container flex justify-center items-center">
         <div>
           <div className="flex gap-5 sm:justify-start items-center justify-center">

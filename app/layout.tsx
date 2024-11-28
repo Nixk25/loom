@@ -1,4 +1,6 @@
 import Navbar from "@/components/Navbar";
+import Cursor from "@/components/ui/Cursor";
+import { CursorProvider } from "./CursorContext";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -22,8 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${DirtyLine.variable} antialiased`}>
-        <Navbar />
-        {children}
+        <CursorProvider>
+          <Cursor />
+          <Navbar />
+          {children}
+        </CursorProvider>
       </body>
     </html>
   );
