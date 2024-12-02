@@ -10,15 +10,15 @@ const HorizontalSectionCard = ({ card }: { card: CardType }) => {
   return (
     <div
       key={card.id}
-      className="group relative h-[450px] w-[450px]  bg-neutral-200 rounded-lg"
+      className="group relative h-[300px] w-[600px]  bg-neutral-200 rounded-lg"
     >
-      <div className="absolute inset-0 z-0  w-full h-full ">
+      <div className="absolute  inset-0 z-0  w-full h-full ">
         <Image
           src={card.url}
           alt={card.title}
           fill
           placeholder="blur"
-          className="object-cover "
+          className="object-cover rounded-lg"
         />
       </div>
       <div className="absolute -bottom-8 items-center w-full flex justify-between left-0 ">

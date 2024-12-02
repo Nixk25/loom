@@ -6,6 +6,7 @@ import Lenis from "lenis";
 import ParralaxScale from "@/components/ParallaxScale";
 import HorizontalScrollCarouselSection from "@/components/HorizontalScrollCarouselSection";
 import JoinUs from "@/components/JoinUs";
+import Footer from "@/components/Footer";
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis();
@@ -24,6 +25,7 @@ export default function Home() {
       <ParralaxScale />
       <HorizontalScrollCarouselSection />
       <JoinUs />
+      <Footer />
     </>
   );
 }

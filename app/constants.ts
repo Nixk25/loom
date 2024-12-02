@@ -3,12 +3,16 @@ import image1 from "@/public/secondSectionPhotos/secondSection1.png";
 import image2 from "@/public/secondSectionPhotos/secondSection2.png";
 import image3 from "@/public/secondSectionPhotos/secondSection3.png";
 import image4 from "@/public/secondSectionPhotos/secondSection4.png";
+
 //PHOTOS FOR HORIZONTAL SCROLL CAROUSEL
 import HorizontalPhoto1 from "@/public/HorizontalScrollCarouselPhotos/HorizontalScrollCarousel1.jpeg";
 import HorizontalPhoto2 from "@/public/HorizontalScrollCarouselPhotos/HorizontalScrollCarousel2.jpeg";
 import HorizontalPhoto3 from "@/public/HorizontalScrollCarouselPhotos/HorizontalScrollCarousel3.jpeg";
 import HorizontalPhoto4 from "@/public/HorizontalScrollCarouselPhotos/HorizontalScrollCarousel4.jpeg";
 import HorizontalPhoto5 from "@/public/HorizontalScrollCarouselPhotos/HorizontalScrollCarousel5.jpeg";
+//ICONS FOR SOCIALS
+import { FaInstagram, FaFacebook, FaDribbble, FaYoutube } from "react-icons/fa";
+
 export const trending = [
   {
     id: 1,
@@ -66,5 +70,39 @@ export const CARDS = [
     title: "Abstract Wall Encounter",
     author: "Olivia Harper",
     id: 5,
+  },
+];
+
+export const FOOTERLINKS = [
+  {
+    name: "© 2024 Loom. All rights reserved.",
+    isUnderlined: false,
+  },
+  {
+    name: "Privacy Policy",
+    isUnderlined: true,
+  },
+  {
+    name: "Terms of Service",
+    isUnderlined: true,
+  },
+  {
+    name: "Cookie Settings",
+    isUnderlined: true,
+  },
+];
+
+export const SOCIALS = [
+  {
+    icon: FaInstagram,
+  },
+  {
+    icon: FaFacebook,
+  },
+  {
+    icon: FaDribbble,
+  },
+  {
+    icon: FaYoutube,
   },
 ];

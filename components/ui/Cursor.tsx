@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useCursor } from "@/app/CursorContext";
 
 const Cursor = () => {
-  const { isCursorHidden } = useCursor();
+  const { isCursorHidden, differentCursor } = useCursor();
   const [cursorPosition, setCursorPosition] = useState({
     x: 0,
     y: 0,
@@ -25,7 +25,12 @@ const Cursor = () => {
 
   return (
     <motion.div
-      className="absolute top-0 left-0 size-6 bg-white mix-blend-difference rounded-full pointer-events-none  z-[999]"
+      className={`absolute hidden lg:block top-0 left-0 
+      bg-white rounded-full ${
+        !differentCursor
+          ? "size-6  mix-blend-difference  pointer-events-none  z-[999999]"
+          : "w-max p-5 text-neutral-900 bg-white rounded-full z-[999] pointer-events-none"
+      }`}
       animate={{
         opacity: isCursorHidden ? 0 : 1,
         x: cursorPosition.x - 12,
@@ -36,7 +41,9 @@ const Cursor = () => {
         stiffness: 500,
         damping: 30,
       }}
-    />
+    >
+      {differentCursor && <motion.span>Click to join</motion.span>}
+    </motion.div>
   );
 };
 
