@@ -9,6 +9,7 @@ const JoinUs = () => {
 
   return (
     <section
+      id="contact"
       className="w-full min-h-screen flex relative justify-center items-center overflow-hidden"
       onMouseEnter={() => {
         setIsHovered(true);

@@ -6,6 +6,8 @@ type CursorContextType = {
   setCursorHidden: (hidden: boolean) => void;
   differentCursor: boolean;
   setDifferentCursor: (different: boolean) => void;
+  isCursorBig: boolean;
+  setCursorBig: (big: boolean) => void;
 };
 
 const CursorContext = createContext<CursorContextType | undefined>(undefined);
@@ -13,6 +15,7 @@ const CursorContext = createContext<CursorContextType | undefined>(undefined);
 export const CursorProvider = ({ children }: { children: React.ReactNode }) => {
   const [isCursorHidden, setCursorHidden] = useState(false);
   const [differentCursor, setDifferentCursor] = useState(false);
+  const [isCursorBig, setCursorBig] = useState(false);
 
   return (
     <CursorContext.Provider
@@ -21,6 +24,8 @@ export const CursorProvider = ({ children }: { children: React.ReactNode }) => {
         setCursorHidden,
         differentCursor,
         setDifferentCursor,
+        isCursorBig,
+        setCursorBig,
       }}
     >
       {children}

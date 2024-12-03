@@ -18,6 +18,7 @@ body {
   font-weight: bold;
   overflow-x: hidden;
   cursor: none;
+  height: 100%;
 }
 
 .font {
@@ -92,4 +93,7 @@ body {
 
 .mainHeadline {
   font-size: clamp(2rem, 12vw, 12rem);
+}
+.navLink {
+  font-size: clamp(3rem, 15vw, 10rem);
 }

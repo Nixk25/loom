@@ -17,12 +17,12 @@ const Card = ({ data }: CardProps) => {
     target: container,
     offset: ["start end", "start start"],
   });
-  const scale = useTransform(scrollYProgress, [0, 1], [2, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1.3, 1]);
 
   return (
     <div
       ref={container}
-      className="h-[100vh]     sticky top-0 translate-y-[10%] max-w-[70%]"
+      className="h-[100vh]  sticky top-0 translate-y-[10%] max-w-[70%]"
     >
       <motion.div
         style={{

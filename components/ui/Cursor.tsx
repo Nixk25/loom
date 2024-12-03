@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useCursor } from "@/app/CursorContext";
 
 const Cursor = () => {
-  const { isCursorHidden, differentCursor } = useCursor();
+  const { isCursorHidden, differentCursor, isCursorBig } = useCursor();
   const [cursorPosition, setCursorPosition] = useState({
     x: 0,
     y: 0,
@@ -25,8 +25,8 @@ const Cursor = () => {
 
   return (
     <motion.div
-      className={`absolute hidden lg:block top-0 left-0 
-      bg-white rounded-full ${
+      className={`absolute hidden sm:block top-0 left-0 
+      bg-white rounded-full origin-center ${
         !differentCursor
           ? "size-6  mix-blend-difference  pointer-events-none  z-[999999]"
           : "w-max p-5 text-neutral-900 bg-white rounded-full z-[999] pointer-events-none"
@@ -35,6 +35,7 @@ const Cursor = () => {
         opacity: isCursorHidden ? 0 : 1,
         x: cursorPosition.x - 12,
         y: cursorPosition.y - 12,
+        scale: isCursorBig ? 4 : 1,
       }}
       transition={{
         type: "spring",

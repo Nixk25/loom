@@ -27,6 +27,7 @@ export default function RootLayout({
         <CursorProvider>
           <Cursor />
           <Navbar />
+
           {children}
         </CursorProvider>
       </body>

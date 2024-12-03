@@ -1,6 +1,5 @@
 "use client";
 import { useScroll, useTransform, motion } from "framer-motion";
-import Image from "next/image";
 import React, { useRef } from "react";
 import photo1 from "../public/ParallaxScalePhotos/ParallaxScale2.jpeg";
 import photo2 from "../public/ParallaxScalePhotos/ParallaxScale5.png";
@@ -8,6 +7,7 @@ import photo3 from "../public/ParallaxScalePhotos/ParallaxScale3.png";
 import photo4 from "../public/ParallaxScalePhotos/ParallaxScale4.png";
 import photo5 from "../public/ParallaxScalePhotos/ParallaxScale1.png";
 import { useCursor } from "@/app/CursorContext";
+import ParallaxScaleImage from "./ui/ParallaxScaleImage";
 const ParallaxScale = () => {
   const { setCursorHidden } = useCursor();
   const container = useRef<HTMLDivElement>(null);
@@ -95,31 +95,7 @@ const ParallaxScale = () => {
     >
       <div className="sticky top-0 overflow-hidden  h-[100vh]">
         {pictures.map((picture, i) => (
-          <motion.div
-            style={{
-              scale: picture.scale,
-            }}
-            key={i}
-            className="w-full h-full absolute top-0 flex justify-center items-center"
-          >
-            <motion.div
-              style={{
-                ...picture.style,
-                borderRadius: picture.borderRadius,
-              }}
-              className="w-[25vw] h-[25vh] relative overflow-hidden"
-            >
-              <motion.div className="w-full h-full">
-                <Image
-                  src={picture.src}
-                  className="object-cover h-full w-full"
-                  alt={picture.alt}
-                  fill
-                  placeholder="blur"
-                />
-              </motion.div>
-            </motion.div>
-          </motion.div>
+          <ParallaxScaleImage picture={picture} key={i} />
         ))}
       </div>
     </div>
