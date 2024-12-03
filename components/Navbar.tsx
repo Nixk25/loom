@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useMotionValueEvent, useScroll, motion } from "framer-motion";
+import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import { AnimatePresence } from "framer-motion";
 import MenuContent from "./ui/MenuContent";
@@ -8,7 +8,7 @@ import MotionNav from "./ui/MotionNav";
 const Navbar = () => {
   const [isHidden, setIsHidden] = useState(false);
   const [isClient, setIsClient] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const IsDesktop = useMediaQuery({
     query: "(min-width: 1224px)",
@@ -47,10 +47,9 @@ const Navbar = () => {
     };
   }, [isMenuOpen]);
 
-  useMotionValueEvent(scrollY, "change", (latest: any) => {
+  useMotionValueEvent(scrollY, "change", (latest: number) => {
     const prev = scrollY.getPrevious();
-    //@ts-ignore
-    if (latest > prev && latest > (IsDesktop ? 150 : 20)) {
+    if (latest > prev! && latest > (IsDesktop ? 150 : 20)) {
       setIsHidden(true);
     } else {
       setIsHidden(false);

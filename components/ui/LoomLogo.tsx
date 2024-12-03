@@ -4,7 +4,7 @@ type Props = {
   className?: string;
   style?: React.CSSProperties;
 };
-const LoomLogo = ({ className, style }: Props) => {
+const LoomLogo = ({ style }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,5 @@
 "use client";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import photo1 from "../public/ParallaxScalePhotos/ParallaxScale2.jpeg";
 import photo2 from "../public/ParallaxScalePhotos/ParallaxScale5.png";
