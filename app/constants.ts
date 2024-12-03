@@ -1,8 +1,8 @@
 //PHOTOS FOR SECOND SECTION
-import image1 from "../public/secondSectionPhotos/secondSection1.png";
-import image2 from "../public/secondSectionPhotos/secondSection2.png";
-import image3 from "../public/secondSectionPhotos/secondSection3.png";
-import image4 from "../public/secondSectionPhotos/secondSection4.png";
+import image1 from "../public/SecondSectionPhotos/secondSection1.png";
+import image2 from "../public/SecondSectionPhotos/secondSection2.png";
+import image3 from "../public/SecondSectionPhotos/secondSection3.png";
+import image4 from "../public/SecondSectionPhotos/secondSection4.png";
 
 //PHOTOS FOR HORIZONTAL SCROLL CAROUSEL
 import HorizontalPhoto1 from "../public/HorizontalScrollCarouselPhotos/HorizontalScrollCarousel1.jpeg";
