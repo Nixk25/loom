@@ -2,6 +2,7 @@ import React from "react";
 import { FOOTERLINKS, NAVITEMS, SOCIALS } from "@/app/constants";
 import { motion } from "framer-motion";
 import { useCursor } from "@/app/CursorContext";
+import FlipLink from "./FlipLink";
 
 type MenuContentProps = {
   toggleMenu: () => void;
@@ -168,9 +169,9 @@ const MenuContent = ({ toggleMenu }: MenuContentProps) => {
               onMouseEnter={() => setCursorBig(true)}
               onMouseLeave={() => setCursorBig(false)}
             >
-              <a href={item.href} onClick={toggleMenu}>
+              <FlipLink href={item.href} onClick={toggleMenu}>
                 {item.label}
-              </a>
+              </FlipLink>
 
               <div className="absolute group-hover:w-full -bottom-2 left-0 w-[0px] transition-all duration-1000 h-3 bg-white"></div>
             </motion.li>

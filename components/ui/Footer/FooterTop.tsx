@@ -1,6 +1,6 @@
 import { useCursor } from "@/app/CursorContext";
 import React from "react";
-import ButtonEnhanced from "./ButtonEnchanced";
+import ButtonEnhanced from "../ButtonEnchanced";
 
 const FooterTop = () => {
   const { setCursorBig } = useCursor();

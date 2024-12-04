@@ -1,4 +1,4 @@
-import HorizontalScrollCarousel from "./ui/HorizontalScrollCarousel";
+import HorizontalScrollCarousel from "./ui/HorizontalSection/HorizontalScrollCarousel";
 
 const HorizontalScrollCarouselSection = () => {
   return (

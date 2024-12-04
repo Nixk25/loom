@@ -1,4 +1,6 @@
 "use client";
+import Navbar from "@/components/Navbar";
+import Cursor from "@/components/ui/Cursor";
 import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import Interest from "@/components/Interest";
@@ -20,6 +22,8 @@ export default function Home() {
   }, []);
   return (
     <>
+      <Cursor />
+      <Navbar />
       <Hero />
       <Interest />
       <ParralaxScale />

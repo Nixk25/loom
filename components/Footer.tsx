@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { Separator } from "@/components/ui/separator";
 import { useMediaQuery } from "react-responsive";
-import FooterBottom from "./ui/FooterBottom";
-import FooterTop from "./ui/FooterTop";
+import FooterBottom from "./ui/Footer/FooterBottom";
+import FooterTop from "./ui/Footer/FooterTop";
 const Footer = () => {
   const [isClient, setIsClient] = useState(false);
   const IsDesktop = useMediaQuery({

@@ -35,7 +35,7 @@ const Cursor = () => {
         opacity: isCursorHidden ? 0 : 1,
         x: cursorPosition.x - 12,
         y: cursorPosition.y - 12,
-        scale: isCursorBig ? 4 : 1,
+        scale: isCursorBig ? 5 : 1,
       }}
       transition={{
         type: "spring",

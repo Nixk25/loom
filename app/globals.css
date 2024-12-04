@@ -97,3 +97,6 @@ body {
 .navLink {
   font-size: clamp(3rem, 15vw, 10rem);
 }
+.registerHeadline {
+  font-size: clamp(2rem, 6vw, 6rem);
+}

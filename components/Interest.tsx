@@ -1,6 +1,6 @@
 import React from "react";
 import { trending } from "@/app/constants";
-import Card from "./ui/Card";
+import Card from "./ui/HorizontalSection/Card";
 import { useCursor } from "@/app/CursorContext";
 import InterestTexts from "./ui/InterestTexts";
 
