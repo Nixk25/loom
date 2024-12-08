@@ -11,6 +11,11 @@ import RegisterBlocks from "@/components/ui/Register/RegisterBlocks";
 import RegisterInputs from "@/components/ui/Register/RegisterInputs";
 import { useRouter } from "next/navigation";
 
+type user = {
+  email: string;
+  firstName: string;
+  surname: string;
+};
 const Register = () => {
   const { setDifferentCursor } = useCursor();
   const [currentStep, setCurrentStep] = useState<
@@ -22,8 +27,8 @@ const Register = () => {
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [focusedInput, setFocusedInput] = useState<string | null>(null);
-  const [users, setUsers] = useState<any[]>([]);
-  const [error, setError] = useState<string | null>(null); // Error state
+  const [users, setUsers] = useState<user[]>([]);
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
   const handleInputChange = (
@@ -89,7 +94,6 @@ const Register = () => {
     try {
       const response = await fetch("data/users.json");
 
-      // Check if the response is OK (status code 200)
       if (!response.ok) {
         throw new Error(`Failed to fetch: ${response.status}`);
       }
@@ -114,7 +118,6 @@ const Register = () => {
       return;
     }
 
-    // If the user exists, navigate to the main page
     router.push("/main");
   };
 
@@ -127,15 +130,14 @@ const Register = () => {
       return;
     }
 
-    // Register the user
     setUsers([...users, { email, firstName: name, surname }]);
 
-    setError(null); // Clear error
-    setName(""); // Clear the form after successful registration
+    setError(null);
+    setName("");
     setSurname("");
     setEmail("");
-    setIsLogin(true); // Switch to login after registration
-    router.push("/main"); // Redirect to the main page
+    setIsLogin(true);
+    router.push("/main");
   };
 
   return (
