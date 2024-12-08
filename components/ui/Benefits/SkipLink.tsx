@@ -7,7 +7,7 @@ const SkipLink = () => {
   return (
     <Link
       key="link-skip"
-      href="Register"
+      href="register"
       onMouseEnter={() => {
         setCursorBig(true);
         setDifferentCursor(false);

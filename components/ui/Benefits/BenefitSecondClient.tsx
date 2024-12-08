@@ -26,7 +26,7 @@ const BenefitSecondClient = () => {
       <Link
         onMouseEnter={() => setDifferentCursor(true)}
         onMouseLeave={() => setDifferentCursor(false)}
-        href="/BenefitThird"
+        href="/benefitThird"
         className="h-screen flex justify-center items-center"
       >
         <AnimatePresence mode="wait">

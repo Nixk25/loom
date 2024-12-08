@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Input } from "../input";
+import { useMediaQuery } from "react-responsive";
 
 type InputNameProps = {
   focusedInput: string | null;
@@ -21,14 +22,24 @@ const InputName = ({
   handleFocus,
   handleBlur,
 }: InputNameProps) => {
+  const IsDesktop = useMediaQuery({
+    query: "(min-width: 1024px)",
+  });
   return (
     <div className="relative w-full">
       <motion.label
-        animate={{
-          right: focusedInput === "name" || name ? 0 : "82%",
-          opacity: focusedInput === "name" || name ? 0.6 : 1,
-        }}
-        className={`absolute text-xl font-thin transition-all `}
+        animate={
+          IsDesktop
+            ? {
+                left: focusedInput === "name" || name ? "85%" : "0%",
+                opacity: focusedInput === "name" || name ? 0.6 : 1,
+              }
+            : {
+                opacity: focusedInput === "name" || name ? 0 : 1,
+              }
+        }
+        exit={{ opacity: 0 }}
+        className="absolute text-xl pointer-events-none select-none z-0 font-thin transition-all text-nowrap  "
         htmlFor="name"
       >
         First name

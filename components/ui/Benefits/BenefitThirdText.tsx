@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useCursor } from "@/app/CursorContext";
+
 const BenefitThirdText = () => {
-  const { setCursorBig } = useCursor();
   return (
     <>
       <motion.h1
@@ -17,8 +16,6 @@ const BenefitThirdText = () => {
           repeat: Infinity,
           repeatDelay: 1,
         }}
-        onMouseEnter={() => setCursorBig(true)}
-        onMouseLeave={() => setCursorBig(false)}
         className="uppercase mainHeadline text-nowrap "
       >
         B<span className="font">ui</span>ld Y<span className="font">our</span> P

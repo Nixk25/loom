@@ -1,11 +1,17 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useCursor } from "@/app/CursorContext";
 import InputName from "./InputName";
 import InputSurname from "./InputSurname";
 import InputEmail from "./InputEmail";
+import ButtonEnhanced from "../ButtonEnchanced";
 
 interface RegisterInputsProps {
+  error: string | null;
+  isTransition: boolean;
+  setIsTransition: React.Dispatch<React.SetStateAction<boolean>>;
+  isLogin: boolean;
+  setIsLogin: React.Dispatch<React.SetStateAction<boolean>>;
   focusedInput: string | null;
   name: string;
   surname: string;
@@ -20,7 +26,13 @@ interface RegisterInputsProps {
   handleFocus: (inputName: string) => void;
   handleBlur: () => void;
 }
+
 const RegisterInputs = ({
+  error,
+  isTransition,
+  setIsTransition,
+  setIsLogin,
+  isLogin,
   focusedInput,
   name,
   surname,
@@ -35,38 +47,82 @@ const RegisterInputs = ({
   const { setCursorBig } = useCursor();
 
   return (
-    <motion.div
-      onMouseEnter={() => setCursorBig(false)}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 3 }}
-      className="w-[70%] flex flex-col gap-10"
-    >
-      <InputName
-        focusedInput={focusedInput}
-        name={name}
-        setName={setName}
-        handleInputChange={handleInputChange}
-        handleFocus={handleFocus}
-        handleBlur={handleBlur}
-      />
-      <InputSurname
-        focusedInput={focusedInput}
-        surname={surname}
-        setSurname={setSurname}
-        handleInputChange={handleInputChange}
-        handleFocus={handleFocus}
-        handleBlur={handleBlur}
-      />
-      <InputEmail
-        focusedInput={focusedInput}
-        email={email}
-        setEmail={setEmail}
-        handleInputChange={handleInputChange}
-        handleFocus={handleFocus}
-        handleBlur={handleBlur}
-      />
-    </motion.div>
+    <AnimatePresence mode="wait">
+      {!isTransition && (
+        <motion.div
+          onMouseEnter={() => setCursorBig(false)}
+          key={isLogin ? "login" : "register"}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: isTransition ? 0 : 1 }}
+          exit={{ opacity: 0 }}
+          className="w-[70%] flex flex-col gap-10"
+        >
+          {!isLogin && (
+            <AnimatePresence mode="wait">
+              <InputName
+                key="input-name"
+                focusedInput={focusedInput}
+                name={name}
+                setName={setName}
+                handleInputChange={handleInputChange}
+                handleFocus={handleFocus}
+                handleBlur={handleBlur}
+              />
+              <InputSurname
+                key="input-surname"
+                focusedInput={focusedInput}
+                surname={surname}
+                setSurname={setSurname}
+                handleInputChange={handleInputChange}
+                handleFocus={handleFocus}
+                handleBlur={handleBlur}
+              />
+            </AnimatePresence>
+          )}
+
+          <InputEmail
+            error={error}
+            focusedInput={focusedInput}
+            email={email}
+            setEmail={setEmail}
+            handleInputChange={handleInputChange}
+            handleFocus={handleFocus}
+            handleBlur={handleBlur}
+          />
+          {error && (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="text-red-500"
+            >
+              {error}
+            </motion.p>
+          )}
+          <div
+            onMouseEnter={() => setCursorBig(true)}
+            onMouseLeave={() => setCursorBig(false)}
+            onClick={() => {
+              setIsTransition(true);
+              setIsLogin((prev) => !prev);
+            }}
+          >
+            {isLogin
+              ? "Don’t have an account? Register now!"
+              : "Already have an account? Log in!"}
+          </div>
+
+          <div className="flex justify-center">
+            <ButtonEnhanced
+              type="submit"
+              prevTitle={isLogin ? "Log In" : "Register"}
+              size="large"
+            />
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

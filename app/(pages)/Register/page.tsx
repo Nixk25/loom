@@ -9,6 +9,7 @@ import ShapeFutureText from "@/components/ui/Register/ShapeFutureText";
 import RegisterText from "@/components/ui/Register/RegisterText";
 import RegisterBlocks from "@/components/ui/Register/RegisterBlocks";
 import RegisterInputs from "@/components/ui/Register/RegisterInputs";
+import { useRouter } from "next/navigation";
 
 const Register = () => {
   const { setDifferentCursor } = useCursor();
@@ -16,9 +17,14 @@ const Register = () => {
     "revolution" | "shapeFuture" | "register" | "inputs"
   >("revolution");
   const [name, setName] = useState("");
+  const [isLogin, setIsLogin] = useState(false);
+  const [isTransition, setIsTransition] = useState(false);
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [focusedInput, setFocusedInput] = useState<string | null>(null);
+  const [users, setUsers] = useState<any[]>([]);
+  const [error, setError] = useState<string | null>(null); // Error state
+  const router = useRouter();
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -36,6 +42,10 @@ const Register = () => {
   };
 
   useEffect(() => {
+    setDifferentCursor(false);
+  }, []);
+
+  useEffect(() => {
     const revolutionTimer = setTimeout(() => {
       setCurrentStep("shapeFuture");
     }, 2000);
@@ -43,13 +53,23 @@ const Register = () => {
       setCurrentStep("register");
     }, 4000);
 
-    setDifferentCursor(false);
-
     return () => {
       clearTimeout(revolutionTimer);
       clearTimeout(shapeFutureTimer);
     };
-  }, []);
+  }, [setDifferentCursor]);
+
+  useEffect(() => {
+    if (isTransition) {
+      const transitionTimer = setTimeout(() => {
+        setIsTransition(false);
+      }, 3000);
+
+      return () => {
+        clearTimeout(transitionTimer);
+      };
+    }
+  }, [isTransition]);
 
   useEffect(() => {
     document.body.style.setProperty("height", "100vh", "important");
@@ -65,9 +85,62 @@ const Register = () => {
     setCurrentStep("inputs");
   };
 
+  const fetchUsers = async () => {
+    try {
+      const response = await fetch("data/users.json");
+
+      // Check if the response is OK (status code 200)
+      if (!response.ok) {
+        throw new Error(`Failed to fetch: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setUsers(data);
+    } catch (error) {
+      throw new Error("Error fetching users:");
+    }
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const user = users.find((user) => user.email === email);
+
+    if (!user) {
+      setError("Email not found, please register.");
+      return;
+    }
+
+    // If the user exists, navigate to the main page
+    router.push("/main");
+  };
+
+  const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const emailExists = users.some((user) => user.email === email);
+
+    if (emailExists) {
+      setError("Email already exists. Please use another one.");
+      return;
+    }
+
+    // Register the user
+    setUsers([...users, { email, firstName: name, surname }]);
+
+    setError(null); // Clear error
+    setName(""); // Clear the form after successful registration
+    setSurname("");
+    setEmail("");
+    setIsLogin(true); // Switch to login after registration
+    router.push("/main"); // Redirect to the main page
+  };
+
   return (
     <section
-      onClick={handleSectionClick} // Tohle je místo pro kliknutí na celou sekci
+      onClick={handleSectionClick}
       onMouseEnter={() => setDifferentCursor(false)}
       className="flex overflow-hidden flex-col justify-center items-center min-h-screen w-full relative"
     >
@@ -86,19 +159,29 @@ const Register = () => {
       <AnimatePresence>
         {currentStep === "inputs" && (
           <>
-            <RegisterBlocks />
-            <RegisterInputs
-              name={name}
-              setName={setName}
-              surname={surname}
-              setSurname={setSurname}
-              focusedInput={focusedInput}
-              email={email}
-              setEmail={setEmail}
-              handleInputChange={handleInputChange}
-              handleFocus={handleFocus}
-              handleBlur={handleBlur}
-            />
+            <RegisterBlocks isLogin={isLogin} setIsLogin={setIsLogin} />
+            <form
+              className="w-full flex justify-center items-center flex-col gap-10"
+              onSubmit={isLogin ? handleLogin : handleRegister}
+            >
+              <RegisterInputs
+                error={error}
+                isTransition={isTransition}
+                setIsTransition={setIsTransition}
+                isLogin={isLogin}
+                setIsLogin={setIsLogin}
+                name={name}
+                setName={setName}
+                surname={surname}
+                setSurname={setSurname}
+                focusedInput={focusedInput}
+                email={email}
+                setEmail={setEmail}
+                handleInputChange={handleInputChange}
+                handleFocus={handleFocus}
+                handleBlur={handleBlur}
+              />
+            </form>
           </>
         )}
       </AnimatePresence>

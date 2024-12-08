@@ -1,9 +1,7 @@
-"use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { useCursor } from "@/app/CursorContext";
+
 const BenefitFirstText = () => {
-  const { setCursorBig } = useCursor();
   return (
     <>
       <motion.h1
@@ -18,8 +16,6 @@ const BenefitFirstText = () => {
           repeat: Infinity,
           repeatDelay: 1,
         }}
-        onMouseEnter={() => setCursorBig(true)}
-        onMouseLeave={() => setCursorBig(false)}
         className="uppercase mainHeadline text-nowrap "
       >
         P<span className="font">ers</span>onaliz

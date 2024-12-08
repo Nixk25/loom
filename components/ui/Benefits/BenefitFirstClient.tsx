@@ -8,12 +8,13 @@ import BackLink from "@/components/ui/Benefits/BackLink";
 import SkipLink from "@/components/ui/Benefits/SkipLink";
 import BenefitFirstText from "@/components/ui/Benefits/BenefitFirstText";
 const BenefitFirstClient = () => {
-  const { setDifferentCursor } = useCursor();
+  const { setDifferentCursor, setCursorBig } = useCursor();
 
   useEffect(() => {
     document.body.style.setProperty("height", "100vh", "important");
     document.body.style.setProperty("overflow", "hidden", "important");
     setDifferentCursor(true);
+    setCursorBig(false);
     return () => {
       document.body.style.setProperty("height", "auto", "important");
       document.body.style.setProperty("overflow", "auto", "important");
@@ -29,7 +30,7 @@ const BenefitFirstClient = () => {
       <SkipLink />
       <Cursor />
       <Link
-        href="/BenefitSecond"
+        href="/benefitSecond"
         className="h-screen flex justify-center items-center"
       >
         <AnimatePresence mode="wait">

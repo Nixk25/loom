@@ -2,13 +2,19 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useCursor } from "@/app/CursorContext";
-
+import { useRouter } from "next/navigation";
 const JoinUs = () => {
+  const router = useRouter();
   const [isHovered, setIsHovered] = useState(false);
   const { setDifferentCursor } = useCursor();
 
+  const handleClick = () => {
+    router.push("/benefitFirst");
+  };
+
   return (
     <section
+      onClick={handleClick}
       id="contact"
       className="w-full min-h-screen flex relative justify-center items-center overflow-hidden"
       onMouseEnter={() => {

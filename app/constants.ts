@@ -110,5 +110,5 @@ export const SOCIALS = [
 export const NAVITEMS = [
   { href: "#trending", label: "Trending" },
   { href: "#contact", label: "Contact Us" },
-  { href: "BenefitFirst", label: "Join Us" },
+  { href: "benefitFirst", label: "Join Us" },
 ];

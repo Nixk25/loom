@@ -1,4 +1,5 @@
 import { useCursor } from "@/app/CursorContext";
+import Link from "next/link";
 import React from "react";
 import ButtonEnhanced from "../ButtonEnchanced";
 
@@ -17,9 +18,11 @@ const FooterTop = () => {
         In the time you spent reading this, 5 new creative projects were shared
         on Loom.
       </p>
-      <div className="flex justify-center">
-        <ButtonEnhanced prevTitle="Register now" size="large" />
-      </div>
+      <Link href="/benefitFirst">
+        <div className="flex justify-center">
+          <ButtonEnhanced prevTitle="Register now" size="large" />
+        </div>
+      </Link>
     </div>
   );
 };
