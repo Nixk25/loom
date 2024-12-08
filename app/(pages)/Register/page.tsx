@@ -101,7 +101,7 @@ const Register = () => {
       const data = await response.json();
       setUsers(data);
     } catch (error) {
-      throw new Error("Error fetching users:");
+      console.error("Error fetching users:", error);
     }
   };
 

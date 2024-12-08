@@ -6,7 +6,7 @@ type RegisterBlocksProps = {
   setIsLogin: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const RegisterBlocks = ({ isLogin, setIsLogin }: RegisterBlocksProps) => {
+const RegisterBlocks = ({ isLogin }: RegisterBlocksProps) => {
   return (
     <>
       <motion.div
