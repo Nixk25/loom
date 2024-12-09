@@ -1,0 +1,151 @@
+[
+  {
+    "id": 1,
+    "postedBy": "Anna Taylor",
+    "imageUrl": "/HeroPhotos/photoHero1.jpeg",
+    "description": "Whispers of Nature",
+    "story": "This image captures the essence of untouched nature, where every whisper of the wind tells a story of life and growth. The vibrant greens and earthy browns evoke a sense of peace and tranquility.",
+    "details": {
+      "location": "Rocky Mountains, USA",
+      "capturedWith": "Canon EOS R5",
+      "date": "2023-06-15",
+      "time": "5:42 AM",
+      "inspiration": "Inspired by the serenity of nature's early hours, this piece represents the delicate balance between chaos and calm."
+    },
+    "similarTags": ["abstract", "modern", "vibrant"]
+  },
+  {
+    "id": 2,
+    "postedBy": "Michael Brown",
+    "imageUrl": "/HeroPhotos/photoHero2.jpeg",
+    "description": "Beautiful Nature Landscape",
+    "story": "A picturesque view that brings forth the raw beauty of our planet. Rolling hills meet the horizon, where the sun gently kisses the earth, creating a mesmerizing play of light and shadow.",
+    "details": {
+      "location": "Lake District, England",
+      "capturedWith": "Nikon Z7 II",
+      "date": "2023-07-10",
+      "time": "7:00 PM",
+      "inspiration": "The golden hour's soft glow inspired this shot, aiming to freeze a fleeting moment of natural beauty."
+    },
+    "similarTags": ["nature", "landscape", "green"]
+  },
+  {
+    "id": 3,
+    "postedBy": "Sophia Carter",
+    "imageUrl": "/HeroPhotos/photoHero3.jpeg",
+    "description": "Shadows and Light",
+    "story": "An exploration of contrasts, this photograph reveals the intricate dance of light and shadow on urban architecture. It challenges the viewer to find harmony in the starkest of dualities.",
+    "details": {
+      "location": "Downtown Manhattan, USA",
+      "capturedWith": "Sony A7 III",
+      "date": "2023-05-20",
+      "time": "3:15 PM",
+      "inspiration": "The interplay of natural light on steel and glass structures inspired this urban study of texture and contrast."
+    },
+    "similarTags": ["architecture", "modern", "city"]
+  },
+  {
+    "id": 4,
+    "postedBy": "Sophie Meadows",
+    "imageUrl": "/HorizontalScrollCarouselPhotos/HorizontalScrollCarousel1.jpeg",
+    "description": "Whispering Peaks",
+    "story": "A painted vision of towering peaks lost in a sea of mist. This abstract work aims to capture the unspoken language of mountains and their whispers to the skies above.",
+    "details": {
+      "medium": "Oil on Canvas",
+      "dimensions": "36 x 24 inches",
+      "completionDate": "2022-12-01",
+      "inspiration": "The ethereal beauty of mountain ranges at sunrise inspired this imaginative composition."
+    },
+    "similarTags": ["abstract", "painting", "vibrant"]
+  },
+  {
+    "id": 5,
+    "postedBy": "Liam Carter",
+    "imageUrl": "/HorizontalScrollCarouselPhotos/HorizontalScrollCarousel2.jpeg",
+    "description": "Futuristic Reverie",
+    "story": "This sculpture blends futuristic design with timeless materials, symbolizing humanity's enduring relationship with the earth even in the age of advanced technology.",
+    "details": {
+      "material": "Marble and Aluminum",
+      "height": "12 feet",
+      "installationDate": "2023-04-15",
+      "location": "Central Park, New York",
+      "inspiration": "The harmony between the organic and synthetic elements was the primary inspiration for this modern masterpiece."
+    },
+    "similarTags": ["sculpture", "stone", "artistic"]
+  },
+  {
+    "id": 6,
+    "postedBy": "Amelia Hayes",
+    "imageUrl": "/HorizontalScrollCarouselPhotos/HorizontalScrollCarousel3.jpeg",
+    "description": "Void on Canvas",
+    "story": "This photograph delves into the stillness of a fleeting moment, where silence reigns supreme. A study in minimalism, it invites the viewer to embrace the void and find their own narrative.",
+    "details": {
+      "location": "Sahara Desert, Morocco",
+      "capturedWith": "Fujifilm X-T4",
+      "date": "2023-08-05",
+      "time": "11:30 AM",
+      "inspiration": "The endless expanse of the desert inspired this work, aiming to showcase the beauty of emptiness."
+    },
+    "similarTags": ["photography", "moment", "serene"]
+  },
+  {
+    "id": 7,
+    "postedBy": "Oliver King",
+    "imageUrl": "/ParallaxScalePhotos/ParallaxScale1.png",
+    "description": "Endless Horizon",
+    "story": "Captured at the edge of the world, this image shows the limitless expanse of the ocean meeting the sky. The horizon stretches endlessly, symbolizing the eternal journey of life and the vast unknown that lies ahead.",
+    "details": {
+      "location": "Cape Horn, Chile",
+      "capturedWith": "Nikon Z7",
+      "date": "2024-03-22",
+      "time": "5:10 AM",
+      "inspiration": "The isolation of Cape Horn during sunrise inspired this image, capturing the raw beauty and solitude of one of the world's most treacherous seas."
+    },
+    "similarTags": ["landscape", "ocean", "infinite"]
+  },
+  {
+    "id": 8,
+    "postedBy": "Emma Rivera",
+    "imageUrl": "/ParallaxScalePhotos/ParallaxScale2.jpeg",
+    "description": "Echoes of the Past",
+    "story": "This image brings to life the ghostly traces of history, where time has left its mark. The crumbling stone walls speak of past lives, whispered stories long forgotten, yet the beauty of decay persists.",
+    "details": {
+      "location": "Machu Picchu, Peru",
+      "capturedWith": "Sony Alpha 7R IV",
+      "date": "2024-05-09",
+      "time": "10:30 AM",
+      "inspiration": "I wanted to capture the timelessness of Machu Picchu and the way its ancient ruins continue to resonate in the present, showing both their resilience and fragility."
+    },
+    "similarTags": ["architecture", "history", "mystery"]
+  },
+  {
+    "id": 9,
+    "postedBy": "Lucas White",
+    "imageUrl": "/ParallaxScalePhotos/ParallaxScale3.png",
+    "description": "Whispers of the Forest",
+    "story": "Amid the thick fog of an ancient forest, light filters through the towering trees, casting ethereal shadows on the ground. This moment captures nature in its most mystical form, as if the forest is speaking in hushed tones.",
+    "details": {
+      "location": "Black Forest, Germany",
+      "capturedWith": "Fujifilm X-T4",
+      "date": "2023-11-01",
+      "time": "6:45 AM",
+      "inspiration": "The mysterious fog that often blankets the Black Forest provided the perfect atmosphere to showcase the secrets that nature holds in silence."
+    },
+    "similarTags": ["nature", "mystic", "forest"]
+  },
+  {
+    "id": 10,
+    "postedBy": "Ava Clarke",
+    "imageUrl": "/ParallaxScalePhotos/ParallaxScale4.png",
+    "description": "Streaks of Time",
+    "story": "In this image, I aimed to capture the passage of time itself. The blurred motion of the clouds and the slow movement of the tide create an abstract representation of how time flows, unnoticed yet ever-present.",
+    "details": {
+      "location": "Lake Superior, Canada",
+      "capturedWith": "Canon EOS R5",
+      "date": "2023-08-17",
+      "time": "2:30 PM",
+      "inspiration": "The long exposure technique allowed me to capture the dynamic, flowing nature of time, highlighting the beauty of transient moments."
+    },
+    "similarTags": ["long exposure", "abstract", "time"]
+  }
+]
