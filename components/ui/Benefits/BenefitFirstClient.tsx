@@ -30,7 +30,7 @@ const BenefitFirstClient = () => {
       <SkipLink />
       <Cursor />
       <Link
-        href="/benefitsecond"
+        href="/benefitSecond"
         className="h-screen flex justify-center items-center"
       >
         <AnimatePresence mode="wait">

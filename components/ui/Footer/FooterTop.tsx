@@ -18,7 +18,7 @@ const FooterTop = () => {
         In the time you spent reading this, 5 new creative projects were shared
         on Loom.
       </p>
-      <Link href="/benefitfirst">
+      <Link href="/benefitFirst">
         <div className="flex justify-center">
           <ButtonEnhanced prevTitle="Register now" size="large" />
         </div>

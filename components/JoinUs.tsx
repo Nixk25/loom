@@ -9,7 +9,7 @@ const JoinUs = () => {
   const { setDifferentCursor } = useCursor();
 
   const handleClick = () => {
-    router.push("/benefitfirst");
+    router.push("/benefitFirst");
   };
 
   return (
