@@ -14,12 +14,21 @@ import { LiaDownloadSolid } from "react-icons/lia";
 import ButtonEnhanced from "../ButtonEnchanced";
 import { motion } from "framer-motion";
 import { useCursor } from "@/app/CursorContext";
+
+type MainContentProps = {
+  setIsDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isDrawerOpen: boolean;
+  selectedTags: string[];
+  filteredPhotos: Photo[];
+  setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
+};
+
 type Photo = {
   id: number;
-  postedBy: string;
+  author: string;
   imageUrl: string;
+  title: string;
   description: string;
-  story: string;
   details: {
     location: string;
     capturedWith: string;
@@ -36,34 +45,16 @@ type Photo = {
   similarTags: string[];
 };
 
-type MainContentProps = {
-  setIsDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  isDrawerOpen: boolean;
-};
-
-const MainContent = ({ setIsDrawerOpen, isDrawerOpen }: MainContentProps) => {
-  const [photos, setPhotos] = useState<Photo[]>([]);
+const MainContent = ({
+  filteredPhotos,
+  setIsDrawerOpen,
+  setSearchQuery,
+  isDrawerOpen,
+}: MainContentProps) => {
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
   const [isFocus, setIsFocus] = useState(false);
   const { setCursorBig } = useCursor();
-
-  useEffect(() => {
-    const fetchPhotos = async () => {
-      try {
-        const response = await fetch("/data/photos.json");
-        if (!response.ok) {
-          throw new Error("Failed to fetch photos");
-        }
-        const data = await response.json();
-        setPhotos(data);
-      } catch (error) {
-        console.error("Error fetching photos:", error);
-      }
-    };
-
-    fetchPhotos();
-  }, []);
 
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -81,14 +72,14 @@ const MainContent = ({ setIsDrawerOpen, isDrawerOpen }: MainContentProps) => {
 
   return (
     <>
-      <div className="columns-2 sm:columns-3 lg:columns-4 gap-4 p-4">
-        {photos.map((photo) => (
+      <div className="columns-2 sm:columns-3 lg:columns-4 gap-4 min-h-screen p-4">
+        {filteredPhotos.map((photo) => (
           <div
             key={photo.id}
             className="mb-4 break-inside-avoid bg-neutral-300 rounded-md shadow-md w-full h-full cursor-pointer"
             onClick={() => {
-              setSelectedPhoto(photo); // Nastaví vybraný obrázek
-              setIsDrawerOpen(true); // Otevře Drawer
+              setSelectedPhoto(photo);
+              setIsDrawerOpen(true);
             }}
           >
             <Image
@@ -140,12 +131,16 @@ const MainContent = ({ setIsDrawerOpen, isDrawerOpen }: MainContentProps) => {
                       </motion.div>
                     </div>
                   )}
-                  <div className="flex justify-between items-center">
-                    <div className="flex flex-wrap gap-2 mt-3">
+                  <div className="flex justify-between ">
+                    <div className="flex flex-wrap gap-2 mt-3 max-w-[70%]">
                       {selectedPhoto?.similarTags.map((tag, index) => (
                         <span
                           onMouseEnter={() => setCursorBig(true)}
                           onMouseLeave={() => setCursorBig(false)}
+                          onClick={() => {
+                            setSearchQuery(tag.toLowerCase());
+                            setIsDrawerOpen(false);
+                          }}
                           key={index}
                           className="bg-neutral-100 text-neutral-500 px-3 py-1 rounded-full text-sm"
                         >
@@ -160,11 +155,11 @@ const MainContent = ({ setIsDrawerOpen, isDrawerOpen }: MainContentProps) => {
                   </div>
                 </div>
                 <div className="flex flex-col flex-1">
-                  <h1 className="mainHeadline flex justify-center text-center  md:justify-end md:text-end md:leading-[150px]">
-                    {selectedPhoto?.postedBy}
+                  <h1 className="mainHeadline flex justify-center text-center  md:justify-end md:text-end md:leading-[120px] xl:leading-[150px] ">
+                    {selectedPhoto?.author}
                   </h1>
                   <p className="flex text-sm text-neutral-500  justify-center text-center  md:justify-end md:text-end md:mt-10">
-                    {selectedPhoto?.story}
+                    {selectedPhoto?.description}
                   </p>
                 </div>
               </div>

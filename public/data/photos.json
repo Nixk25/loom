@@ -1,151 +1,260 @@
 [
   {
     "id": 1,
-    "postedBy": "Anna Taylor",
+    "author": "Anna Taylor",
     "imageUrl": "/HeroPhotos/photoHero1.jpeg",
-    "description": "Whispers of Nature",
-    "story": "This image captures the essence of untouched nature, where every whisper of the wind tells a story of life and growth. The vibrant greens and earthy browns evoke a sense of peace and tranquility.",
+    "title": "Contemplative Man",
+    "description": "A thoughtful man gazes to the side, his expression deep in contemplation. This vibrant photograph captures a moment of introspection.",
     "details": {
-      "location": "Rocky Mountains, USA",
+      "location": "Unknown",
       "capturedWith": "Canon EOS R5",
       "date": "2023-06-15",
       "time": "5:42 AM",
-      "inspiration": "Inspired by the serenity of nature's early hours, this piece represents the delicate balance between chaos and calm."
+      "inspiration": "Inspired by the depth of human thought and reflection, this piece seeks to capture the quiet moments of inner focus."
     },
-    "similarTags": ["abstract", "modern", "vibrant"]
+    "similarTags": [
+      "portrait",
+      "thoughtful",
+      "introspection",
+      "human",
+      "emotion",
+      "vibrant"
+    ],
+    "filters": {
+      "containsPeople": true,
+      "isBlackAndWhite": false
+    }
   },
   {
     "id": 2,
-    "postedBy": "Michael Brown",
+    "author": "Michael Brown",
     "imageUrl": "/HeroPhotos/photoHero2.jpeg",
-    "description": "Beautiful Nature Landscape",
-    "story": "A picturesque view that brings forth the raw beauty of our planet. Rolling hills meet the horizon, where the sun gently kisses the earth, creating a mesmerizing play of light and shadow.",
+    "title": "Pencil Close-Up",
+    "description": "A black-and-white close-up of a pencil, capturing the details of the graphite and wood. This simple yet striking image focuses on the tool of creation.",
     "details": {
-      "location": "Lake District, England",
+      "location": "Studio",
       "capturedWith": "Nikon Z7 II",
       "date": "2023-07-10",
       "time": "7:00 PM",
-      "inspiration": "The golden hour's soft glow inspired this shot, aiming to freeze a fleeting moment of natural beauty."
+      "inspiration": "The pencil, an essential tool for artists, was the perfect subject for exploring the elegance of simplicity."
     },
-    "similarTags": ["nature", "landscape", "green"]
+    "similarTags": [
+      "black and white",
+      "close-up",
+      "pencil",
+      "art",
+      "simple",
+      "monochrome"
+    ],
+    "filters": {
+      "containsPeople": false,
+      "isBlackAndWhite": true
+    }
   },
   {
     "id": 3,
-    "postedBy": "Sophia Carter",
+    "author": "Sophia Carter",
     "imageUrl": "/HeroPhotos/photoHero3.jpeg",
-    "description": "Shadows and Light",
-    "story": "An exploration of contrasts, this photograph reveals the intricate dance of light and shadow on urban architecture. It challenges the viewer to find harmony in the starkest of dualities.",
+    "title": "Eye Close-Up",
+    "description": "A black-and-white close-up of an eye, capturing the intricate details of the iris and lashes. This image delves into the intense focus and depth of human vision.",
     "details": {
-      "location": "Downtown Manhattan, USA",
+      "location": "Unknown",
       "capturedWith": "Sony A7 III",
       "date": "2023-05-20",
       "time": "3:15 PM",
-      "inspiration": "The interplay of natural light on steel and glass structures inspired this urban study of texture and contrast."
+      "inspiration": "This photograph was inspired by the powerful symbolism of the human eye as a gateway to perception and understanding."
     },
-    "similarTags": ["architecture", "modern", "city"]
+    "similarTags": [
+      "portrait",
+      "eye",
+      "close-up",
+      "black and white",
+      "intensity",
+      "detail"
+    ],
+    "filters": {
+      "containsPeople": false,
+      "isBlackAndWhite": true
+    }
   },
   {
     "id": 4,
-    "postedBy": "Sophie Meadows",
+    "author": "Sophie Meadows",
     "imageUrl": "/HorizontalScrollCarouselPhotos/HorizontalScrollCarousel1.jpeg",
-    "description": "Whispering Peaks",
-    "story": "A painted vision of towering peaks lost in a sea of mist. This abstract work aims to capture the unspoken language of mountains and their whispers to the skies above.",
+    "title": "Orange Staircase in White Passage",
+    "description": "A white passageway leads to an orange staircase, creating a striking contrast. The image captures the simplicity and modernity of the design.",
     "details": {
-      "medium": "Oil on Canvas",
+      "medium": "Photography",
       "dimensions": "36 x 24 inches",
       "completionDate": "2022-12-01",
-      "inspiration": "The ethereal beauty of mountain ranges at sunrise inspired this imaginative composition."
+      "inspiration": "The stark contrast between the white walls and the vibrant orange staircase was the inspiration for this minimalist composition."
     },
-    "similarTags": ["abstract", "painting", "vibrant"]
+    "similarTags": [
+      "architecture",
+      "modern",
+      "staircase",
+      "minimalism",
+      "interior",
+      "contrast"
+    ],
+    "filters": {
+      "containsPeople": false,
+      "isBlackAndWhite": false
+    }
   },
   {
     "id": 5,
-    "postedBy": "Liam Carter",
+    "author": "Liam Carter",
     "imageUrl": "/HorizontalScrollCarouselPhotos/HorizontalScrollCarousel2.jpeg",
-    "description": "Futuristic Reverie",
-    "story": "This sculpture blends futuristic design with timeless materials, symbolizing humanity's enduring relationship with the earth even in the age of advanced technology.",
+    "title": "Futuristic Stadium",
+    "description": "A modern, large-scale stadium or museum, captured in full view, showcasing its futuristic design and clean lines.",
     "details": {
-      "material": "Marble and Aluminum",
-      "height": "12 feet",
+      "material": "Steel and Glass",
+      "location": "Unknown",
       "installationDate": "2023-04-15",
-      "location": "Central Park, New York",
-      "inspiration": "The harmony between the organic and synthetic elements was the primary inspiration for this modern masterpiece."
+      "inspiration": "The sleek, forward-thinking design of modern stadiums and museums inspired this wide-angle capture of cutting-edge architecture."
     },
-    "similarTags": ["sculpture", "stone", "artistic"]
+    "similarTags": [
+      "architecture",
+      "futuristic",
+      "stadium",
+      "modern",
+      "design",
+      "landscape"
+    ],
+    "filters": {
+      "containsPeople": false,
+      "isBlackAndWhite": false
+    }
   },
   {
     "id": 6,
-    "postedBy": "Amelia Hayes",
+    "author": "Amelia Hayes",
     "imageUrl": "/HorizontalScrollCarouselPhotos/HorizontalScrollCarousel3.jpeg",
-    "description": "Void on Canvas",
-    "story": "This photograph delves into the stillness of a fleeting moment, where silence reigns supreme. A study in minimalism, it invites the viewer to embrace the void and find their own narrative.",
+    "title": "Black Painting in White Room",
+    "description": "A minimalist white room with a single black painting on the wall. The simplicity of the space enhances the starkness of the artwork, drawing attention to its presence.",
     "details": {
-      "location": "Sahara Desert, Morocco",
+      "location": "Unknown",
       "capturedWith": "Fujifilm X-T4",
       "date": "2023-08-05",
       "time": "11:30 AM",
-      "inspiration": "The endless expanse of the desert inspired this work, aiming to showcase the beauty of emptiness."
+      "inspiration": "The use of stark contrasts between the white walls and the black painting was intended to create a meditative and powerful space."
     },
-    "similarTags": ["photography", "moment", "serene"]
+    "similarTags": [
+      "minimalism",
+      "art",
+      "black and white",
+      "interior",
+      "simplicity",
+      "modern"
+    ],
+    "filters": {
+      "containsPeople": false,
+      "isBlackAndWhite": true
+    }
   },
   {
     "id": 7,
-    "postedBy": "Oliver King",
+    "author": "Oliver King",
     "imageUrl": "/ParallaxScalePhotos/ParallaxScale1.png",
-    "description": "Endless Horizon",
-    "story": "Captured at the edge of the world, this image shows the limitless expanse of the ocean meeting the sky. The horizon stretches endlessly, symbolizing the eternal journey of life and the vast unknown that lies ahead.",
+    "title": "Futuristic Car Model",
+    "description": "A futuristic car model that could travel in space or on other planets. The design incorporates sleek, aerodynamic features.",
     "details": {
-      "location": "Cape Horn, Chile",
+      "location": "Concept Design",
       "capturedWith": "Nikon Z7",
       "date": "2024-03-22",
       "time": "5:10 AM",
-      "inspiration": "The isolation of Cape Horn during sunrise inspired this image, capturing the raw beauty and solitude of one of the world's most treacherous seas."
+      "inspiration": "The concept of space travel and futuristic vehicles inspired this design, blending technology and imagination."
     },
-    "similarTags": ["landscape", "ocean", "infinite"]
+    "similarTags": [
+      "design",
+      "futuristic",
+      "technology",
+      "concept",
+      "vehicle",
+      "space"
+    ],
+    "filters": {
+      "containsPeople": false,
+      "isBlackAndWhite": false
+    }
   },
   {
     "id": 8,
-    "postedBy": "Emma Rivera",
+    "author": "Emma Rivera",
     "imageUrl": "/ParallaxScalePhotos/ParallaxScale2.jpeg",
-    "description": "Echoes of the Past",
-    "story": "This image brings to life the ghostly traces of history, where time has left its mark. The crumbling stone walls speak of past lives, whispered stories long forgotten, yet the beauty of decay persists.",
+    "title": "Artistic Expression Room",
+    "description": "A room filled with colorful abstract art, each piece contributing to a vibrant and imaginative atmosphere.",
     "details": {
-      "location": "Machu Picchu, Peru",
+      "location": "Art Gallery",
       "capturedWith": "Sony Alpha 7R IV",
       "date": "2024-05-09",
       "time": "10:30 AM",
-      "inspiration": "I wanted to capture the timelessness of Machu Picchu and the way its ancient ruins continue to resonate in the present, showing both their resilience and fragility."
+      "inspiration": "The room's eclectic mix of abstract art pieces inspired this colorful, dynamic photo, showcasing the endless possibilities of creative expression."
     },
-    "similarTags": ["architecture", "history", "mystery"]
+    "similarTags": [
+      "art",
+      "abstract",
+      "colorful",
+      "expression",
+      "gallery",
+      "vibrant"
+    ],
+    "filters": {
+      "containsPeople": false,
+      "isBlackAndWhite": false
+    }
   },
   {
     "id": 9,
-    "postedBy": "Lucas White",
+    "author": "Lucas White",
     "imageUrl": "/ParallaxScalePhotos/ParallaxScale3.png",
-    "description": "Whispers of the Forest",
-    "story": "Amid the thick fog of an ancient forest, light filters through the towering trees, casting ethereal shadows on the ground. This moment captures nature in its most mystical form, as if the forest is speaking in hushed tones.",
+    "title": "Artist's Brush Close-Up",
+    "description": "A close-up image of a paintbrush, its bristles loaded with black ink, creating intricate, expressive lines on the canvas.",
     "details": {
-      "location": "Black Forest, Germany",
+      "location": "Studio",
       "capturedWith": "Fujifilm X-T4",
       "date": "2023-11-01",
       "time": "6:45 AM",
-      "inspiration": "The mysterious fog that often blankets the Black Forest provided the perfect atmosphere to showcase the secrets that nature holds in silence."
+      "inspiration": "This photograph celebrates the tool of the artist, capturing the act of creation in motion."
     },
-    "similarTags": ["nature", "mystic", "forest"]
+    "similarTags": [
+      "art",
+      "brush",
+      "close-up",
+      "painting",
+      "expression",
+      "monochrome"
+    ],
+    "filters": {
+      "containsPeople": false,
+      "isBlackAndWhite": false
+    }
   },
   {
     "id": 10,
-    "postedBy": "Ava Clarke",
+    "author": "Ava Clarke",
     "imageUrl": "/ParallaxScalePhotos/ParallaxScale4.png",
-    "description": "Streaks of Time",
-    "story": "In this image, I aimed to capture the passage of time itself. The blurred motion of the clouds and the slow movement of the tide create an abstract representation of how time flows, unnoticed yet ever-present.",
+    "title": "Street Art Curves",
+    "description": "A colorful display of modern street art featuring unique, curved lines and vibrant hues. This piece captures the energy and creativity of urban art.",
     "details": {
-      "location": "Lake Superior, Canada",
+      "location": "Street Art Exhibition",
       "capturedWith": "Canon EOS R5",
       "date": "2023-08-17",
       "time": "2:30 PM",
-      "inspiration": "The long exposure technique allowed me to capture the dynamic, flowing nature of time, highlighting the beauty of transient moments."
+      "inspiration": "The dynamic forms and colors of street art, with their vibrant expression and energy, inspired this photograph."
     },
-    "similarTags": ["long exposure", "abstract", "time"]
+    "similarTags": [
+      "street art",
+      "modern",
+      "urban",
+      "colorful",
+      "curves",
+      "creativity"
+    ],
+    "filters": {
+      "containsPeople": false,
+      "isBlackAndWhite": false
+    }
   }
 ]
