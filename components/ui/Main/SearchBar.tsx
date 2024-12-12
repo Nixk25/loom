@@ -36,7 +36,7 @@ const SearchBar = ({
         type="text"
         name="name"
         value={searchQuery}
-        className="rounded-full shadow-md py-7 pl-5 w-full"
+        className="rounded-full shadow-md py-7 pl-5 w-full relative z-0"
       />
       <motion.div
         onMouseEnter={() => setCursorBig(true)}

@@ -117,8 +117,14 @@ const Register = () => {
       setError("Email not found, please register.");
       return;
     }
-
-    router.push("/main");
+    setError(null);
+    setName("");
+    setSurname("");
+    setEmail("");
+    setIsLogin(true);
+    setTimeout(() => {
+      router.push("/main");
+    }, 2000);
   };
 
   const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
@@ -137,7 +143,9 @@ const Register = () => {
     setSurname("");
     setEmail("");
     setIsLogin(true);
-    router.push("/main");
+    setTimeout(() => {
+      router.push("/main");
+    }, 2000);
   };
 
   return (

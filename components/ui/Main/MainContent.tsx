@@ -2,18 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-} from "@/components/ui/drawer";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { LiaDownloadSolid } from "react-icons/lia";
-import ButtonEnhanced from "../ButtonEnchanced";
-import { motion } from "framer-motion";
-import { useCursor } from "@/app/CursorContext";
+import DrawerPart from "./DrawerPart";
 
 type MainContentProps = {
   setIsDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -23,7 +12,7 @@ type MainContentProps = {
   setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
 };
 
-type Photo = {
+export type Photo = {
   id: number;
   author: string;
   imageUrl: string;
@@ -54,7 +43,6 @@ const MainContent = ({
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
   const [isFocus, setIsFocus] = useState(false);
-  const { setCursorBig } = useCursor();
 
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -95,145 +83,14 @@ const MainContent = ({
         ))}
       </div>
 
-      <Drawer open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
-        <DrawerContent className="h-[80%] ">
-          <ScrollArea>
-            <DrawerHeader className="hidden">
-              <DrawerTitle className=" hidden" aria-readonly>
-                {selectedPhoto?.description}
-              </DrawerTitle>
-            </DrawerHeader>
-            <div className="flex flex-col w-full items-center gap-10 mt-4">
-              <div className="flex flex-1 gap-10 items-center justify-center flex-col md:flex-row px-10">
-                <div>
-                  {selectedPhoto && (
-                    <div
-                      onMouseEnter={() => setIsFocus(true)}
-                      onMouseLeave={() => setIsFocus(false)}
-                      className="h-[500px] relative overflow-hidden  flex "
-                    >
-                      <Image
-                        placeholder="blur"
-                        src={selectedPhoto.imageUrl}
-                        alt={selectedPhoto.description}
-                        blurDataURL={selectedPhoto.imageUrl}
-                        height={700}
-                        width={700}
-                        className="rounded-lg h-full object-cover"
-                      />
-                      <motion.div
-                        onMouseEnter={() => setCursorBig(true)}
-                        onMouseLeave={() => setCursorBig(false)}
-                        animate={isFocus ? { opacity: 1 } : { opacity: 0 }}
-                        className="absolute top-2 right-2 rounded-full size-10 bg-neutral-900 text-white text-xl"
-                      >
-                        <LiaDownloadSolid className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 " />
-                      </motion.div>
-                    </div>
-                  )}
-                  <div className="flex justify-between ">
-                    <div className="flex flex-wrap gap-2 mt-3 max-w-[70%]">
-                      {selectedPhoto?.similarTags.map((tag, index) => (
-                        <span
-                          onMouseEnter={() => setCursorBig(true)}
-                          onMouseLeave={() => setCursorBig(false)}
-                          onClick={() => {
-                            setSearchQuery(tag.toLowerCase());
-                            setIsDrawerOpen(false);
-                          }}
-                          key={index}
-                          className="bg-neutral-100 text-neutral-500 px-3 py-1 rounded-full text-sm"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    <span className="text-sm text-neutral-500">
-                      {selectedPhoto?.details?.date}
-                    </span>
-                  </div>
-                </div>
-                <div className="flex flex-col flex-1">
-                  <h1 className="mainHeadline flex justify-center text-center  md:justify-end md:text-end md:leading-[120px] xl:leading-[150px] ">
-                    {selectedPhoto?.author}
-                  </h1>
-                  <p className="flex text-sm text-neutral-500  justify-center text-center  md:justify-end md:text-end md:mt-10">
-                    {selectedPhoto?.description}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <div>
-                  Location <p>{selectedPhoto?.details.location}</p>
-                </div>
-
-                <div>
-                  Captured with <p>{selectedPhoto?.details.capturedWith}</p>
-                </div>
-
-                <div>
-                  Time <p>{selectedPhoto?.details.time}</p>
-                </div>
-
-                <div>
-                  Inspiration <p>{selectedPhoto?.details.inspiration}</p>
-                </div>
-
-                {/* If the photo has additional details */}
-                {selectedPhoto?.details.medium && (
-                  <div>
-                    Medium <p>{selectedPhoto?.details.medium}</p>
-                  </div>
-                )}
-
-                {selectedPhoto?.details.dimensions && (
-                  <div>
-                    Dimensions <p>{selectedPhoto?.details.dimensions}</p>
-                  </div>
-                )}
-
-                {selectedPhoto?.details.completionDate && (
-                  <div>
-                    Completion Date{" "}
-                    <p>{selectedPhoto?.details.completionDate}</p>
-                  </div>
-                )}
-
-                {selectedPhoto?.details.material && (
-                  <div>
-                    Material <p>{selectedPhoto?.details.material}</p>
-                  </div>
-                )}
-
-                {selectedPhoto?.details.height && (
-                  <div>
-                    Height <p>{selectedPhoto?.details.height}</p>
-                  </div>
-                )}
-
-                {selectedPhoto?.details.installationDate && (
-                  <div>
-                    Installation Date{" "}
-                    <p>{selectedPhoto?.details.installationDate}</p>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            <DrawerFooter className="mt-4 flex justify-center items-center">
-              <div
-                aria-readonly
-                className="absolute top-2 right-5 hidden"
-                onClick={() => setIsDrawerOpen(false)}
-              >
-                <ButtonEnhanced prevTitle="Close" />
-              </div>
-            </DrawerFooter>
-          </ScrollArea>
-        </DrawerContent>
-      </Drawer>
+      <DrawerPart
+        setIsDrawerOpen={setIsDrawerOpen}
+        isDrawerOpen={isDrawerOpen}
+        setSearchQuery={setSearchQuery}
+        selectedPhoto={selectedPhoto}
+        setIsFocus={setIsFocus}
+        isFocus={isFocus}
+      />
     </>
   );
 };
