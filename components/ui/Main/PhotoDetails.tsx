@@ -1,5 +1,5 @@
 import React from "react";
-import { Photo } from "./MainContent";
+import { Photo } from "@/app/(pages)/main/page";
 const PhotoDetails = ({
   selectedPhoto,
   setSearchQuery,

@@ -5,9 +5,15 @@ type ButtonProps = {
   prevTitle: string;
   size?: "large" | "small";
   type?: "button" | "submit" | "reset";
+  variant?: "primary" | "outline" | "secondary";
 };
 
-const ButtonEnhanced = ({ prevTitle, size = "large", type }: ButtonProps) => {
+const ButtonEnhanced = ({
+  prevTitle,
+  size = "large",
+  type,
+  variant = "primary",
+}: ButtonProps) => {
   const sizeClasses =
     size === "large" ? "p-4 px-12 text-lg" : "p-2 px-6 text-sm";
   const { setCursorHidden } = useCursor();
@@ -16,7 +22,11 @@ const ButtonEnhanced = ({ prevTitle, size = "large", type }: ButtonProps) => {
       type={type}
       onMouseEnter={() => setCursorHidden(true)}
       onMouseLeave={() => setCursorHidden(false)}
-      className={`relative flex justify-center items-center w-max cursor-none rounded-full bg-black transition-all duration-500 ease-in-out select-none hover:bg-white  text-white overflow-hidden group ${sizeClasses}`}
+      className={`relative flex justify-center items-center w-max cursor-none rounded-full  transition-all duration-500 ease-in-out select-none hover:bg-white  overflow-hidden group ${sizeClasses} ${
+        variant === "outline"
+          ? "bg-transparent text-black"
+          : "bg-black text-white"
+      }`}
       role="button"
       tabIndex={0}
       aria-label="Button"

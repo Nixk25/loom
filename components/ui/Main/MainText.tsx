@@ -1,5 +1,4 @@
 import React from "react";
-
 const MainText = () => {
   return (
     <div className="flex container sm:gap-5 items-center uppercase registerHeadline flex-wrap justify-center gap-2  leading-[20px] sm:leading-[50px] px-10">

@@ -4,8 +4,19 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
 import { useCursor } from "@/app/CursorContext";
-import LoomLogo from "@/components/ui/LoomLogo";
-const MainNav = ({ isDrawerOpen }: { isDrawerOpen: boolean }) => {
+import Logo from "./Logo";
+import MainNavButtons from "./MainNavButtons";
+import { Photo } from "@/app/(pages)/main/page";
+
+const MainNav = ({
+  isDrawerOpen,
+  photos,
+  setPhotos,
+}: {
+  isDrawerOpen: boolean;
+  photos: Photo[];
+  setPhotos: React.Dispatch<React.SetStateAction<Photo[]>>;
+}) => {
   const [isHidden, setIsHidden] = useState(false);
   const [isClient, setIsClient] = useState(false);
   const { setCursorBig } = useCursor();
@@ -46,33 +57,18 @@ const MainNav = ({ isDrawerOpen }: { isDrawerOpen: boolean }) => {
       }}
       className="w-full flex fixed top-0 left-0 backdrop-blur-md z-[99999] items-center justify-between px-10"
     >
-      <a
-        href="#"
-        onMouseEnter={() => setCursorBig(true)}
-        onMouseLeave={() => setCursorBig(false)}
-      >
-        <div
-          className={` ${
-            IsDesktop ? "size-[80px]" : "size-[100px]"
-          } cursor-pointer ${isDrawerOpen ? "text-white" : "text-black"}`}
-        >
-          <LoomLogo />
-        </div>
-      </a>
+      <Logo
+        IsDesktop={IsDesktop}
+        isDrawerOpen={isDrawerOpen}
+        setCursorBig={setCursorBig}
+      />
 
-      <div
-        onMouseEnter={() => setCursorBig(true)}
-        onMouseLeave={() => setCursorBig(false)}
-        className="rounded-full  w-28 h-8 border relative flex items-center justify-center px-5 z-[999] cursor-none"
-      >
-        <span
-          className={`absolute w-max px-5 cursor-none ${
-            isDrawerOpen ? "text-white" : "text-black"
-          }`}
-        >
-          Your space
-        </span>
-      </div>
+      <MainNavButtons
+        photos={photos}
+        setPhotos={setPhotos}
+        setCursorBig={setCursorBig}
+        isDrawerOpen={isDrawerOpen}
+      />
     </motion.nav>
   );
 };

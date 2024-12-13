@@ -1,6 +1,6 @@
 import React from "react";
 import { useCursor } from "@/app/CursorContext";
-import { Photo } from "./MainContent";
+import { Photo } from "@/app/(pages)/main/page";
 import DrawerMainImage from "./DrawerMainImage";
 import PhotoDetails from "./PhotoDetails";
 import DrawerAuthorInfo from "./DrawerAuthorInfo";

@@ -8,8 +8,8 @@ import MainText from "@/components/ui/Main/MainText";
 import MultiSelectPart from "@/components/ui/Main/MultiSelectPart";
 import SearchBar from "@/components/ui/Main/SearchBar";
 import React, { useEffect, useState } from "react";
-
-type Photo = {
+import { useUser } from "@/app/UserContext";
+export type Photo = {
   id: number;
   author: string;
   imageUrl: string;
@@ -36,11 +36,13 @@ type Photo = {
 };
 
 const Main = () => {
+  const { currentUser } = useUser();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [isTransition, setIsTransition] = useState(true);
+  console.log(currentUser);
   useEffect(() => {
     const fetchPhotos = async () => {
       try {
@@ -126,7 +128,11 @@ const Main = () => {
 
   return (
     <section className="flex justify-center items-center ">
-      <MainNav isDrawerOpen={isDrawerOpen} />
+      <MainNav
+        isDrawerOpen={isDrawerOpen}
+        photos={photos}
+        setPhotos={setPhotos}
+      />
       <Cursor />
       <MainBlocks isTransition={isTransition} />
       <div className="flex mt-[150px] justify-center flex-col items-center gap-10">

@@ -10,13 +10,11 @@ import RegisterText from "@/components/ui/Register/RegisterText";
 import RegisterBlocks from "@/components/ui/Register/RegisterBlocks";
 import RegisterInputs from "@/components/ui/Register/RegisterInputs";
 import { useRouter } from "next/navigation";
+import { useUser } from "@/app/UserContext";
 
-type user = {
-  email: string;
-  firstName: string;
-  surname: string;
-};
 const Register = () => {
+  const { findUserByEmail, addUser, setCurrentUser } = useUser();
+
   const { setDifferentCursor } = useCursor();
   const [currentStep, setCurrentStep] = useState<
     "revolution" | "shapeFuture" | "register" | "inputs"
@@ -27,10 +25,8 @@ const Register = () => {
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [focusedInput, setFocusedInput] = useState<string | null>(null);
-  const [users, setUsers] = useState<user[]>([]);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
-
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     setter: React.Dispatch<React.SetStateAction<string>>
@@ -90,33 +86,16 @@ const Register = () => {
     setCurrentStep("inputs");
   };
 
-  const fetchUsers = async () => {
-    try {
-      const response = await fetch("data/users.json");
-
-      if (!response.ok) {
-        throw new Error(`Failed to fetch: ${response.status}`);
-      }
-
-      const data = await response.json();
-      setUsers(data);
-    } catch (error) {
-      console.error("Error fetching users:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchUsers();
-  }, []);
-
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const user = users.find((user) => user.email === email);
+    const user = findUserByEmail(email);
 
     if (!user) {
       setError("Email not found, please register.");
       return;
     }
+
+    setCurrentUser(user);
     setError(null);
     setName("");
     setSurname("");
@@ -129,15 +108,16 @@ const Register = () => {
 
   const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const emailExists = users.some((user) => user.email === email);
+    const existingUser = findUserByEmail(email);
 
-    if (emailExists) {
+    if (existingUser) {
       setError("Email already exists. Please use another one.");
       return;
     }
 
-    setUsers([...users, { email, firstName: name, surname }]);
-
+    const newUser = { email, firstName: name, surname, role: "user" };
+    addUser(newUser);
+    setCurrentUser(newUser);
     setError(null);
     setName("");
     setSurname("");

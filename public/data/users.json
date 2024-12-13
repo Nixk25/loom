@@ -1,12 +1,23 @@
 [
   {
-    "email": "user1@example.com",
+    "email": "user@example.com",
     "firstName": "John",
-    "surname": "Doe"
+    "surname": "Doe",
+    "role": "user",
+    "posts": [1, 2, 3]
   },
   {
-    "email": "user2@example.com",
+    "email": "manager@example.com",
     "firstName": "Jane",
-    "surname": "Doe"
+    "surname": "Doe",
+    "role": "manager",
+    "posts": [4, 5, 6, 7]
+  },
+  {
+    "email": "admin@example.com",
+    "firstName": "Mark",
+    "surname": "Doe",
+    "role": "admin",
+    "posts": [8, 9, 10]
   }
 ]

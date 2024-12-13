@@ -2,6 +2,7 @@ import { CursorProvider } from "./CursorContext";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { UserProvider } from "./UserContext";
 
 const DirtyLine = localFont({
   src: "./fonts/DirtyLine.woff2",
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${DirtyLine.variable} antialiased`}>
-        <CursorProvider>{children}</CursorProvider>
+        <UserProvider>
+          <CursorProvider>{children}</CursorProvider>
+        </UserProvider>
       </body>
     </html>
   );

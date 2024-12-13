@@ -9,7 +9,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import ButtonEnhanced from "../ButtonEnchanced";
 import DrawerMainContent from "./DrawerMainContent";
-import { Photo } from "./MainContent";
+import { Photo } from "@/app/(pages)/main/page";
 import DrawerDetails from "./DrawerDetails";
 
 const DrawerPart = ({
