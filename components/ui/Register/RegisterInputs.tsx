@@ -1,9 +1,9 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useCursor } from "@/app/CursorContext";
-import InputName from "./InputName";
-import InputSurname from "./InputSurname";
-import InputEmail from "./InputEmail";
+import InputName from "./Inputs/InputName";
+import InputSurname from "./Inputs/InputSurname";
+import InputEmail from "./Inputs/InputEmail";
 import ButtonEnhanced from "../ButtonEnchanced";
 
 interface RegisterInputsProps {
@@ -25,6 +25,7 @@ interface RegisterInputsProps {
   ) => void;
   handleFocus: (inputName: string) => void;
   handleBlur: () => void;
+  setIsBlocksAnimating: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const RegisterInputs = ({
@@ -43,6 +44,7 @@ const RegisterInputs = ({
   handleInputChange,
   handleFocus,
   handleBlur,
+  setIsBlocksAnimating,
 }: RegisterInputsProps) => {
   const { setCursorBig } = useCursor();
 
@@ -106,6 +108,7 @@ const RegisterInputs = ({
             onClick={() => {
               setIsTransition(true);
               setIsLogin((prev) => !prev);
+              setIsBlocksAnimating((prev) => !prev);
             }}
           >
             {isLogin

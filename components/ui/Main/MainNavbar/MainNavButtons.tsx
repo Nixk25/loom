@@ -1,7 +1,7 @@
 import React from "react";
-import AddNew from "./AddNew";
+import AddNew from "../AddNew/AddNew";
 import Link from "next/link";
-import { Photo } from "@/app/(pages)/main/page";
+import { Photo } from "../MainClient";
 type MainNavButtonsProps = {
   photos: Photo[];
   setPhotos: React.Dispatch<React.SetStateAction<Photo[]>>;
@@ -13,7 +13,7 @@ const MainNavButtons = ({
   setCursorBig,
 }: MainNavButtonsProps) => {
   return (
-    <div className="flex items-center gap-10 justify-center">
+    <div className="flex items-center gap-5 justify-center">
       <AddNew />
       <Link
         href="/profile"

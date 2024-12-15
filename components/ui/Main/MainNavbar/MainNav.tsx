@@ -4,10 +4,9 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
 import { useCursor } from "@/app/CursorContext";
-import Logo from "./Logo";
+import Logo from "../Logo";
 import MainNavButtons from "./MainNavButtons";
-import { Photo } from "@/app/(pages)/main/page";
-
+import { Photo } from "../MainClient";
 const MainNav = ({
   isDrawerOpen,
   photos,

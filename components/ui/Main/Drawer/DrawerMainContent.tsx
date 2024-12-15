@@ -1,8 +1,8 @@
 import React from "react";
 import { useCursor } from "@/app/CursorContext";
-import { Photo } from "@/app/(pages)/main/page";
+import { Photo } from "../MainClient";
 import DrawerMainImage from "./DrawerMainImage";
-import PhotoDetails from "./PhotoDetails";
+import PhotoDetails from "../PhotoDetails";
 import DrawerAuthorInfo from "./DrawerAuthorInfo";
 const DrawerMainContent = ({
   isFocus,

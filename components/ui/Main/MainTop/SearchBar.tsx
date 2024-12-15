@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Input } from "../input";
+import { Input } from "../../input";
 import { motion } from "framer-motion";
 import { FaSearch } from "react-icons/fa";
 import { useCursor } from "@/app/CursorContext";

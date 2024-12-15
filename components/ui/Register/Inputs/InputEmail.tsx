@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Input } from "../input";
+import { Input } from "../../input";
 import { useMediaQuery } from "react-responsive";
 type InputEmailProps = {
   error: string | null;

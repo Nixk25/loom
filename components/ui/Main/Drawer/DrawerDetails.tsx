@@ -12,10 +12,7 @@ const DrawerDetails = ({ details }: { details: Details }) => {
       {details.map(
         (detail, index) =>
           detail.value && (
-            <div
-              key={index}
-              className="flex justify-center items-center flex-col"
-            >
+            <div key={index} className="flex  items-center flex-col">
               {" "}
               <h3 className="drawerHeadline ">{detail.label}</h3>
               <p className="text-sm text-neutral-500 font-light">

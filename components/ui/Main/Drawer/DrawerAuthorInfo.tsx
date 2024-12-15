@@ -1,5 +1,5 @@
 import React from "react";
-import { Photo } from "@/app/(pages)/main/page";
+import { Photo } from "../MainClient";
 const DrawerAuthorInfo = ({
   selectedPhoto,
 }: {

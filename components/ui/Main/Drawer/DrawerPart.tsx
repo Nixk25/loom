@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Drawer,
   DrawerContent,
@@ -7,9 +7,9 @@ import {
   DrawerTitle,
 } from "@/components/ui/drawer";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import ButtonEnhanced from "../ButtonEnchanced";
+import ButtonEnhanced from "../../ButtonEnchanced";
 import DrawerMainContent from "./DrawerMainContent";
-import { Photo } from "@/app/(pages)/main/page";
+import { Photo } from "../MainClient";
 import DrawerDetails from "./DrawerDetails";
 
 const DrawerPart = ({
@@ -17,16 +17,14 @@ const DrawerPart = ({
   isDrawerOpen,
   setIsDrawerOpen,
   selectedPhoto,
-  setIsFocus,
-  isFocus,
 }: {
   setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
   isDrawerOpen: boolean;
   setIsDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>;
   selectedPhoto: Photo | null;
-  isFocus: boolean;
-  setIsFocus: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  const [isFocus, setIsFocus] = useState(false);
+
   const details = [
     { label: "Location", value: selectedPhoto?.details.location },
     { label: "Captured", value: selectedPhoto?.details.capturedWith },
@@ -34,10 +32,10 @@ const DrawerPart = ({
     { label: "Inspiration", value: selectedPhoto?.details.inspiration },
     { label: "Medium", value: selectedPhoto?.details.medium },
     { label: "Dimensions", value: selectedPhoto?.details.dimensions },
-    { label: "Completion Date", value: selectedPhoto?.details.completionDate },
+    { label: " Date", value: selectedPhoto?.details.completionDate },
     { label: "Material", value: selectedPhoto?.details.material },
     {
-      label: "Installation Date",
+      label: "Installation",
       value: selectedPhoto?.details.installationDate,
     },
   ];

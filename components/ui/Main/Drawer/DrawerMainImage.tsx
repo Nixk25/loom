@@ -2,8 +2,7 @@ import React from "react";
 import { LiaDownloadSolid } from "react-icons/lia";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Photo } from "@/app/(pages)/main/page";
-
+import { Photo } from "../MainClient";
 const DrawerMainImage = ({
   isFocus,
   setIsFocus,

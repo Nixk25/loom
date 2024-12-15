@@ -6,7 +6,7 @@ import {
   MultiSelectorItem,
   MultiSelectorList,
   MultiSelectorTrigger,
-} from "../MultiSelect";
+} from "../../MultiSelect";
 
 const MultiSelectPart = ({
   setSelectedTags,
