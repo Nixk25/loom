@@ -6,9 +6,9 @@
   cursor: none;
 }
 @font-face {
-  font-family: "DirtyLine";
-  src: url("/fonts/DirtyLine.woff2") format("woff2"),
-    url("/fonts/DirtyLine.woff") format("woff");
+  font-family: "Pilowlava";
+  src: url("/fonts/Pilowlava-Regular.woff2") format("woff2"),
+    url("/fonts/Pilowlava-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -22,7 +22,7 @@ body {
 }
 
 .font {
-  font-family: "DirtyLine", sans-serif;
+  font-family: "Pilowlava", sans-serif;
   font-weight: normal;
 }
 

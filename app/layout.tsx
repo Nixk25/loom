@@ -4,9 +4,9 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { UserProvider } from "./UserContext";
 
-const DirtyLine = localFont({
-  src: "./fonts/DirtyLine.woff2",
-  variable: "--font-dirty-line",
+const Pilowlava = localFont({
+  src: "./fonts/Pilowlava-Regular.woff2",
+  variable: "--font-pilowlava",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${DirtyLine.variable} antialiased`}>
+      <body className={`${Pilowlava.variable} antialiased`}>
         <UserProvider>
           <CursorProvider>{children}</CursorProvider>
         </UserProvider>
