@@ -21,7 +21,7 @@ const MainBlocks = ({ isTransition }: MainBlocksProps) => {
           times: [0, 0.5, 0.8, 1],
           ease: "easeIn",
         }}
-        className="w-full h-[200vh] bg-neutral-800 absolute top-0 left-0 z-[999999]"
+        className="w-full h-[105vh] bg-neutral-800 absolute top-0 left-0 z-[999999]"
       />
 
       <motion.div
@@ -37,7 +37,7 @@ const MainBlocks = ({ isTransition }: MainBlocksProps) => {
           times: [0, 0.5, 0.8, 1],
           ease: "easeIn",
         }}
-        className="w-full h-[200vh] bg-neutral-800 absolute bottom-0 left-0 z-[999999]"
+        className="w-full h-[105vh] bg-neutral-800 absolute bottom-0 left-0 z-[999999]"
       />
     </>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -15,6 +15,13 @@ const AddNewDialog = ({
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent className="z-[50] w-[90%] rounded-lg  max-h-[500px] overflow-auto">

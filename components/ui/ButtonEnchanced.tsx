@@ -34,7 +34,7 @@ const ButtonEnhanced = ({
       <span className="group-hover:translate-y-[120%] transition-all duration-300 ease-in-out">
         {prevTitle}
       </span>
-      <div className="absolute translate-y-[-100%] rounded-tl-none scale-0 origin-top group-hover:scale-100 rounded-tr-none group-hover:rounded-tl-full group-hover:rounded-tr-full  group-hover:translate-y-0 w-[100%]   border-none outline-none h-full text-center rounded-full bg-white pointer-events-none select-non group-active:bg-black/20 group-active:scale-90 text-black  z-10 transition-all duration-300 ease-in-out flex justify-center items-center">
+      <div className="absolute translate-y-[-100%] rounded-tl-none scale-0 origin-top group-hover:scale-100 rounded-tr-none group-hover:rounded-tl-full group-hover:rounded-tr-full  group-hover:translate-y-0 w-[100%]   border-none outline-none h-full text-center rounded-full bg-white pointer-events-none select-non group-active:bg-black/20 group-active:scale-90 text-black  z-1 transition-all duration-300 ease-in-out flex justify-center items-center">
         <span>Click me</span>
       </div>
     </button>

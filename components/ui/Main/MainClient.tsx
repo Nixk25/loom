@@ -60,7 +60,9 @@ const MainClient = () => {
 
   useEffect(() => {
     document.body.style.setProperty("height", "100vh");
-    document.body.style.setProperty("overflow", "hidden");
+    requestAnimationFrame(() => {
+      document.body.style.setProperty("overflow", "hidden");
+    });
   }, []);
 
   useEffect(() => {
@@ -125,7 +127,7 @@ const MainClient = () => {
   });
 
   return (
-    <section className="flex justify-center items-center ">
+    <section className="flex justify-center items-center overflow-hidden">
       <MainNav
         isDrawerOpen={isDrawerOpen}
         photos={photos}

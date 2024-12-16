@@ -103,3 +103,6 @@ body {
 .drawerHeadline {
   font-size: clamp(2rem, 6vw, 4rem);
 }
+.profileHeadline {
+  font-size: clamp(2rem, 10vw, 8rem);
+}
