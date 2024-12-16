@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1>Loom 🎨</h1>
 
-## Getting Started
+<h2>Intro</h2>
+Loom is a creative platform that connects freelancers and clients in the digital art and design space. The application allows users to share, explore, and discover inspiring projects across various creative disciplines. Loom emphasizes smooth user experience and interactive design, helping both clients and artists to collaborate and communicate effectively. The platform offers a seamless way to showcase and browse art, design, and creative projects from all over the world.
 
-First, run the development server:
+<h2>Tech Stack 🛠️</h2>
+<ul>
+<li>Frontend: React, Tailwind CSS, Framer Motion.
+</li>
+<li>Next.js (for server-side rendering and routing).</li>
+<li>Not yet implemented (for future integration).</li>
+</ul>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<h2>Features 🌟</h2>
+<ul>
+<li>Creative Project Showcase: Users can browse a wide range of creative projects, including web design, digital art, and street art, with detailed information.</li>
+<li>Interactive Animations: Fluid transitions and animations created with Framer Motion provide a smooth and engaging browsing experience.</li>
+<li>User Interaction: Users can upload and showcase their own work, as well as interact with other users’ projects.</li>
+<li>Filtering & Searching: Search and filter projects based on tags, titles, authors, and other criteria.</li>
+<li>Responsive Design: The platform is optimized for both desktop and mobile devices, ensuring a consistent experience across all screen sizes.</li>
+</ul>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<h2>Process 🚀</h2>
+The project began with the idea of creating a platform that helps connect creatives and clients, making it easier to showcase and discover inspiring projects. The design process started in Figma, focusing on a clean, minimalist layout to emphasize the content. React was used for the frontend to ensure flexibility, and Framer Motion was incorporated to provide interactive animations. The backend, built with Next.js, ensures server-side rendering and routing.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<h2>Learnings 🧠</h2>
+<ul>
+<li>UI/UX Design: I honed my skills in creating engaging user interfaces, focusing on usability and accessibility.</li>
+<li>Interactive Animations: Integrating Framer Motion to bring fluid animations to the user interface.</li>
+<li>Frontend-Backend Integration: Gaining experience with Next.js for full-stack development, even though the backend database is yet to be implemented.</li>
+<li>Problem-Solving: Encountering and resolving technical challenges throughout the project lifecycle.</li>
+</ul>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<h2>Project Visuals 📸</h2>
+<img width="1439" alt="Snímek obrazovky elcat gallery" src="https://github.com/user-attachments/assets/527d1a77-0c41-4f56-bf01-af4bbf0709d0">
