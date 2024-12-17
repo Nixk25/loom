@@ -31,5 +31,6 @@ The project began with the idea of creating a platform that helps connect creati
 <li>Problem-Solving: Encountering and resolving technical challenges throughout the project lifecycle.</li>
 </ul>
 
+
 <h2>Project Visuals 📸</h2>
-<img width="1439" alt="Snímek obrazovky elcat gallery" src="https://github.com/user-attachments/assets/527d1a77-0c41-4f56-bf01-af4bbf0709d0">
+<img width="1439" alt="Snímek obrazovky elcat gallery" src="https://github.com/user-attachments/assets/72f75fb0-317f-4635-86a0-b42109cb54b7">
