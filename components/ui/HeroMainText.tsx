@@ -26,7 +26,7 @@ const HeroMainText = () => {
           animate={{ x: 0, opacity: 1, scale: 1 }}
           initial={{ x: "100%", scale: 0.5 }}
           transition={{ delay: 1, ease: "easeOut" }}
-          className="xl:h-[160px] xl:w-[220px] sm:w-[150px] w-[120px] rounded-xl xl:mb-5 md:h-[100px] sm:h-[100px] h-[60px]"
+          className="xl:h-[140px] xl:w-[220px] sm:w-[200px] w-[100px] rounded-xl xl:mb-5 md:h-[100px] -mt-[0px]  xl:mt-[20px] sm:h-[100px] h-[60px]"
         >
           <Image
             src={photoHero1}
@@ -40,7 +40,7 @@ const HeroMainText = () => {
           animate={{ x: 0, opacity: 1, scale: 1 }}
           initial={{ x: "-100%", opacity: 0.2, scale: 0.5 }}
           transition={{ delay: 1, ease: "easeOut" }}
-          className="xl:h-[160px] sm:w-[150px] w-[60px] sm:h-[100px] h-[60px] rounded-xl lg:-mt-[80px] -mt-[10px] sm:-mt-[40px] xl:-mt-[150px]   "
+          className="xl:h-[120px] sm:w-[150px] w-[60px] sm:h-[100px] h-[40px] rounded-xl lg:-mt-[90px] -mt-[10px]  sm:-mt-[40px] xl:-mt-[120px]   "
         >
           <Image
             src={photoHero2}
@@ -52,19 +52,19 @@ const HeroMainText = () => {
           animate={{ x: 0, opacity: 1 }}
           initial={{ x: "100%", opacity: 0.2 }}
           transition={{ delay: 1, ease: "easeOut" }}
-          className="flex gap-5"
+          className="flex gap-4"
         >
           <h1
             onMouseEnter={() => setCursorBig(true)}
             onMouseLeave={() => setCursorBig(false)}
-            className="xl:-mt-[120px] min-[1500px]:-mt-[140px] lg:-mt-[80px] sm:-mt-[40px] -mt-[10px] uppercase mainHeadline"
+            className="xl:-mt-[120px] min-[1500px]:-mt-[140px] lg:-mt-[80px] sm:-mt-[40px] -mt-[10px]  uppercase mainHeadline"
           >
             y<span className="font">our</span>{" "}
           </h1>
           <h1
             onMouseEnter={() => setCursorBig(true)}
             onMouseLeave={() => setCursorBig(false)}
-            className="xl:-mt-[120px] -mt-[10px] min-[1500px]:-mt-[140px] lg:-mt-[80px]  sm:-mt-[40px] uppercase mainHeadline"
+            className="xl:-mt-[120px] -mt-[10px]  min-[1500px]:-mt-[140px] lg:-mt-[80px]  sm:-mt-[40px] uppercase mainHeadline"
           >
             <span className="font">li</span>
             fe
@@ -78,7 +78,7 @@ const HeroMainText = () => {
           animate={{ x: 0, opacity: 1 }}
           initial={{ x: "-100%", opacity: 0.2 }}
           transition={{ delay: 1, ease: "easeOut" }}
-          className="xl:-mt-[120px] -mt-[10px] min-[1500px]:-mt-[140px] lg:-mt-[80px] sm:-mt-[40px]  uppercase mainHeadline"
+          className="xl:-mt-[120px] -mt-[10px]  min-[1500px]:-mt-[140px] lg:-mt-[80px] sm:-mt-[40px]  uppercase mainHeadline"
         >
           th<span className="font">roug</span>h
         </motion.h1>
@@ -86,7 +86,7 @@ const HeroMainText = () => {
           animate={{ x: 0, opacity: 1, scale: 1 }}
           initial={{ x: "100%", scale: 0.5, opacity: 0.2 }}
           transition={{ delay: 1, ease: "easeOut" }}
-          className="xl:h-[160px] sm:h-[100px] h-[60px] sm:w-[150px] w-[80px] rounded-xl xl:-mt-[150px] -mt-[10px] lg:-mt-[80px] sm:-mt-[40px]  "
+          className="xl:h-[120px] sm:w-[150px] w-[80px] sm:h-[100px] h-[40px] rounded-xl lg:-mt-[90px] -mt-[10px]  sm:-mt-[40px] xl:-mt-[120px]  "
         >
           <Image
             src={photoHero3}
@@ -95,12 +95,12 @@ const HeroMainText = () => {
           />
         </motion.div>
       </div>
-      <div className="flex gap-5 flex-col sm:flex-row ">
+      <div className="flex gap-5 flex-col sm:flex-row sm:justify-start sm:items-start justify-center items-center ">
         <motion.p
           animate={{ x: 0, opacity: 1 }}
           initial={{ x: "-100%", opacity: 0.2 }}
           transition={{ delay: 1, ease: "easeOut" }}
-          className="xl:-mt-[50px]  sm:order-1 order-2 text-sm -mt-[15px] sm:max-w-[280px] text-center sm:text-end font-normal"
+          className="xl:-mt-[50px]  sm:order-1 order-2 text-sm -mt-[15px] sm:max-w-[280px] max-w-[90%] text-center sm:text-end font-normal"
         >
           Welcome to Loom, your ultimate destination for creative inspiration.
           Immerse yourself in a vibrant community that celebrates diverse forms
@@ -112,7 +112,7 @@ const HeroMainText = () => {
           animate={{ x: 0, opacity: 1 }}
           initial={{ x: "100%", opacity: 0.2 }}
           transition={{ delay: 1, ease: "easeOut" }}
-          className="xl:-mt-[120px] -mt-[10px] min-[1500px]:-mt-[140px] text-center sm:text-start sm:order-2 order-1 lg:-mt-[80px] sm:-mt-[40px]  uppercase mainHeadline"
+          className="xl:-mt-[120px] -mt-[10px]  min-[1500px]:-mt-[140px] text-center sm:text-start sm:order-2 order-1 lg:-mt-[80px] sm:-mt-[40px]  uppercase mainHeadline"
         >
           de<span className="font">si</span>gn
         </motion.h1>

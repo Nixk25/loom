@@ -11,7 +11,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const IsDesktop = useMediaQuery({
-    query: "(min-width: 1224px)",
+    query: "(min-width: 768px)",
   });
   const { scrollY } = useScroll();
 

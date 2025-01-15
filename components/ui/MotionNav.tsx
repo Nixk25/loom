@@ -40,7 +40,7 @@ const MotionNav = ({
         <motion.div
           animate={{ color: isMenuOpen ? "white" : "black" }}
           className={` ${
-            IsDesktop ? "size-[80px]" : "size-[100px]"
+            IsDesktop ? "size-[100px]" : "size-[60px]"
           } cursor-pointer`}
         >
           <LoomLogo />

@@ -15,7 +15,7 @@ const Logo = ({ setCursorBig, IsDesktop, isDrawerOpen }: LogoProps) => {
     >
       <div
         className={` ${
-          IsDesktop ? "size-[80px]" : "size-[100px]"
+          IsDesktop ? "size-[100px]" : "size-[60px]"
         } cursor-pointer ${isDrawerOpen ? "text-white" : "text-black"}`}
       >
         <LoomLogo />
